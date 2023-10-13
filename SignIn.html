@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>  <!--Icon-->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!--sweetarlet2-->
+    <link rel="stylesheet" href="css/bootstrap.css">  <!--Bootstrap-->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.js"></script> <!--jquery-->
+    <link rel="stylesheet" href="css/SignIn.css">
+</head>
+<body>
+    <!--header-->
+     <section>
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand  text-white" href=""><i style="font-size: 50px;" class='bx bxl-apple'></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Thương hiệu
+                  </a>
+                  <ul class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item text-light condition" href="#">Điện Thoại</a></li>
+                    <li><a class="dropdown-item text-light condition" href="#">Tablet</a></li>
+                  </ul>
+                </li>
+  
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Loại Sản Phẩm
+                  </a>
+                  <ul class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item text-light condition" href="#">Apple</a></li>
+                    <li><a class="dropdown-item text-light condition" href="#">Samsung</a></li>
+                  </ul>
+                </li>
+  
+                <li class="nav-item">
+                  <a class="nav-link text-white condition" href="#">Hóa Đơn</a>
+                </li>
+  
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="LogIn.html">LogIn</a>
+                </li>
+  
+              
+              </ul>
+              <form class="d-flex">
+                  <a class="nav-link text-white condition" href="#"><i style="font-size: 50px;" class='bx bx-cart-alt ' ></i></a>
+                <input class="form-control me-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+    </section>
+
+        <!-- body -->
+      <div class="wrapper">
+        <div style="margin-top: 20px;" class="form ">
+        <div>
+            <span>Họ và Tên:</span><br>
+            <input type="text" id="name" value=""><br>
+            <span class="error" id="nameError">Vui lòng không bỏ trống</span>
+            <span class="error" id="nameErrorLength">Vui lòng điền từ 5 ký tự trở lên</span>
+        </div>
+        <div>
+            <span>Email:</span><br>
+            <input type="text" id="email">
+            <span class="error" id="emailError">Vui lòng không bỏ trống</span>
+            <span class="error" id="emailErrorCheck">Địa chỉ email bao gồm ít nhất  ký tự "@" và ".com"</span>
+    
+        </div>
+        <div>
+            <span>Điện thoại:</span><br>
+            <input type="number" id="phone">
+            <span class="error" id="phoneError">Vui lòng không bỏ trống</span>
+            <span class="error" id="phoneErrorLength">Số điện thoại tối đa 11 số</span>
+    
+        </div>
+        <div>
+            <span>Giới tính:</span>
+            <span>Nam</span>
+            <input type="radio" name="Gender" id="male" value="Male">
+            <span>Nữ</span>
+            <input type="radio" name="Gender" id="female" value="Female">
+            <span class="error" id="genderError">Vui lòng Chọn 1 trong 2 giới tính</span>
+        </div>
+        <div>
+            <span>Tên người dùng:</span><br>
+            <input type="text" id="user">
+            <span class="error" id="userError">Vui lòng không bỏ trống</span>
+            <span class="error" id="userErrorLength">Vui lòng điền từ 6 ký tự trở lên</span>
+        </div>
+        <div>
+            <span>Mật khẩu:</span><br>
+            <input type="password" id="password" style="margin-left: 30px;">
+            <input type="checkbox" onclick="ShowPassword()" id="checkbox1" ><i class='bx bx-show'></i>
+            <span class="error" id="passwordError">Vui lòng không bỏ trống</span>
+            <span class="error" id="passwordErrorLength">Vui lòng điền từ 8 ký tự trở lên</span>
+            <span class="error" id="passwordCheck">Mật khẩu cần có độ dài 8 ký tự, ít nhất 1 ký tự thường, 1 ký tự hoa, 1 ký tự đặc biệt trong dãy (@#$&) và 1 ký tự số</span>
+    
+        </div>
+        <div>
+            <span>Xác nhận mật khẩu:</span><br>
+            <input type="password" id="confirmPassword" style="margin-left: 30px;">
+            <input type="checkbox" onclick="ShowConfirmPassword()" id="checkbox2" ><i class='bx bx-show'></i>
+            <span class="error" id="confirmError">Vui lòng không bỏ trống</span>
+            <span class="error" id="confirmErrorCheck">Vui lòng nhập chính xác với mật khẩu</span>
+        </div>
+        <div>
+            <button type="submit" onclick="check(event)" class="confirm">Đăng kí</button>
+            <span class="error" id="checkForm">vui lòng không bỏ trống và nhập đầy đủ thông tin</span>
+        </div>
+        </div>
+        </div>
+        <!--Thông báo đăng ký thành công-->
+        <div class="success" id="success"></div>
+          <!--footer-->
+  <section class="footer">
+    <nav class="footer bg-dark fixed-bottom" >
+      <div class="container">
+      <div class="row justify-content-center align-items-center">
+          <div class="col-sm-3 text-white">
+              <h5>Contact Info</h5>
+              <ul>
+                  <li ><i class='bx bx-map'></i> Ho Chi Minh City</li>
+                  <li><i class='bx bx-phone' ></i> +84 90x xxx</li>
+                  <li><i class='bx bx-envelope' ></i> abcd@gmail.com</li>
+              </ul>
+          </div>
+          <div class="col-sm-3 text-white">
+              <h5>Quick Links</h5>
+              <ul class="text-white">
+                 <a href="index.html"><li>> Home</li></a>
+                  <a href="#"><li>> About</li></a>
+                  <a href="#"><li>> Mobiles</li></a>
+                  <a href="#"><li>> Blog</li></a>
+                  <a href="#"><li>> Contact</li></a>
+              </ul>
+          </div>
+          <div class="col-sm-3 text-white">
+              <h5>Policy Info</h5>
+              <ul class="text-white">
+                   <a href="index.html"><li>> Payments</li></a>
+                   <a href="#"><li>> Cancellation & Return</li></a>
+                   <a href="#"><li>> Shipping & Delivery</li></a>
+                   <a href="#"><li>> Privacy & Policy</li></a>
+                   <a href="#"><li>> T & C</li></a>
+               </ul>
+          </div>
+          <div class="col-sm-3 text-white">
+              <h5>Connect With Us</h5>
+              <div style="padding-left: 10px; margin:50px;">
+                  <a href="#"><i class='bx bxl-facebook-circle icon' style="background-color: #3b5998;border: 2px solid black;border-radius: 50%;color: white;padding: 5px;text-decoration: none; color: inherit;" undefined ></i></a>
+                  <a href="#"><i class='bx bxl-twitter icon' style="background-color: #00acee;border: 2px solid black;border-radius: 50%;color: white;padding: 5px;text-decoration: none; color: inherit;"></i></a>
+                  <a href="#"><i class='bx bxl-google icon' style="background-color:  #c71610	;border: 2px solid black;border-radius: 50%;color: white;padding: 5px;text-decoration: none; color: inherit;" ></i></a>
+                  <a href="#"><i class='bx bxl-instagram icon' style="background: linear-gradient(to top, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);border: 2px solid black;border-radius: 50%;color: white;padding: 5px;text-decoration: none; color: inherit;" ></i></a>
+              </div>
+          </div>
+      </div> 
+    </div>       
+  </nav>
+  </section>
+
+  <script src="js/SignIn.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*----------body----------*/
+    
+
+.form{
+    text-align: center;
+    padding :50px;
+    background-color: rgb(238, 234, 234);
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    width: 20%;
+    margin: auto;
+    padding-bottom: 15px
+}
+
+.form input{
+    max-width: 100%;
+    height: 25px;
+    border-radius: 5px;
+    border-color: green;
+}
+
+.form div {
+    margin: 10px 5px;
+    
+}
+
+.confirm{
+    background-color: aqua;
+    color: rgb(44, 5, 5);
+    height: 100%;
+    width: 50%;
+    padding: 20px;
+    margin-top: 10px;
+}
+.confirm:hover{
+    background-color: rgb(93, 161, 163);
+}
+
+.error{
+    display: none;
+}
+
+#checkbox{
+   border: none;
+   background-color: transparent;
+   cursor: pointer;
+}
+
+#checkbox i{
+    color: black;
+}
+
+#checkbox.active i{
+    color:  red;
+}
+
+
+/*----footer-----*/
+a{
+    text-decoration: none; 
+    color: inherit;
+}
+
+.footer{
+    margin-top: 20px;
+}

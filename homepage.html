@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>  <!--Icon-->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script><!--SweetAlert2-->
+    <link rel="stylesheet" href="css/bootstrap.css">  <!--Bootstrap-->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.js"></script> <!--jquery-->
+    <link rel="stylesheet" href="css/homepage.css">
+
+</head>
+<body onload="productTotal()">
+<!--header-->
+    <section>
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand  text-white" href="homepage.html"><i style="font-size: 50px;" class='bx bxl-apple'></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Thương hiệu
+                  </a>
+                  <ul class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item text-light condition" href="#">Điện Thoại</a></li>
+                    <li><a class="dropdown-item text-light condition"  href="#">Tablet</a></li>
+                  </ul>
+                </li>
+  
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Loại Sản Phẩm
+                  </a>
+                  <ul class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item text-light condition"  href="Apple.html">Apple</a></li>
+                    <li><a class="dropdown-item text-light condition"  href="Samsung.html">Samsung</a></li>
+                  </ul>
+                </li>
+  
+                <li class="nav-item">
+                  <a class="nav-link text-white condition" href="Manager.html   ">Quản Lý</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link text-white condition" href="Manager.html   ">Sản phẩm</a>
+                </li>
+  
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="index.html">LogOut</a>
+                  </li>
+
+                
+              </ul>
+              <form class="d-flex">
+                <a class="nav-link text-white condition" href="cart.html"><i style="font-size: 50px;" class='bx bx-cart-alt ' ><sub style="font-size: medium;color: #e5330b;" id="total">0</sub></i></a>
+                <input class="form-control me-2" id="search" type="search" placeholder="Tìm kiếm" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit"  onclick="searchProducts()" >Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+    </section>
+
+<!-- body -->
+    <section>
+        <div class="wrapper">
+            <div>
+            <img class="w-100" src="https://www.macgasm.net/wp-content/uploads/2023/09/iphone-15-release.jpg" alt="banner">
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="w-30 col-3 col-md-3 mt-3 ">
+                        <img class="img-fluid" src="https://seletronic.com.br/wp-content/uploads/2023/07/iphone-15-banner-fake-img.jpg" alt="">
+                    </div>
+                    <div  class="w-30 col-3 col-md-3 mt-3 ">
+                        <img class="img-fluid" src="https://genz.com.vn/wp-content/uploads/2023/09/iphone-15-pro-max-iphone-15-pro-mo-ban-29-9-thumbnail.jpg" alt="">
+                    </div>
+                    <div class="w-30 col-3 col-md-3 mt-3 ">
+                        <img class="img-fluid" src="https://onewaymobile.vn/upload_images/images/2022/12/05/iphone-15-ultra-concept.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <br>
+        <h2 class="text-center mt-3">Sản Phẩm</h2>
+        <hr>
+        <div class="product">
+            <div class="product-box">
+                <div class="product-items">
+                    <div class="product-item">
+                         <a href="Apple.html" class="condition"><h1>Apple</h1></a>
+                        <img  src="https://product.hstatic.net/1000300544/product/iphone11-red-select-2019_222ac686f374464aa2c37e8bc41cbd54_1024x1024.png" alt="">
+                        <div class="product-item-text">
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <a href="Samsung.html" class="condition"><h1>Samsung</h1></a>
+                       <img src="https://hc.com.vn/i/ecommerce/media/ckeditor_2642836.png" alt="">
+                       <div class="product-item-text">
+                       </div>
+                   </div>
+                </div>
+                
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+  <!--footer-->
+  <section>
+    <nav class="footer bg-dark " >
+      <div class="container">
+      <div class="row justify-content-center align-items-center">
+          <div class="col-sm-3 text-white">
+              <h5>Contact Info</h5>
+              <ul>
+                  <li ><i class='bx bx-map'></i> Ho Chi Minh City</li>
+                  <li><i class='bx bx-phone' ></i> +84 90x xxx</li>
+                  <li><i class='bx bx-envelope' ></i> abcd@gmail.com</li>
+              </ul>
+          </div>
+          <div class="col-sm-3 text-white">
+              <h5>Quick Links</h5>
+              <ul class="text-white">
+                 <a href="index.html"><li>> Home</li></a>
+                  <a href="#"><li>> About</li></a>
+                  <a href="#"><li>> Mobiles</li></a>
+                  <a href="#"><li>> Blog</li></a>
+                  <a href="#"><li>> Contact</li></a>
+              </ul>
+          </div>
+          <div class="col-sm-3 text-white">
+              <h5>Policy Info</h5>
+              <ul class="text-white">
+                  <a href="index.html"><li>> Payments</li></a>
+                   <a href="#"><li>> Cancellation & Return</li></a>
+                   <a href="#"><li>> Shipping & Delivery</li></a>
+                   <a href="#"><li>> Privacy & Policy</li></a>
+                   <a href="#"><li>> T & C</li></a>
+               </ul>
+          </div>
+          <div class="col-sm-3 text-white">
+              <h5>Connect With Us</h5>
+              <div style="padding-left: 10px; margin:50px;">
+                  <a href="#"><i class='bx bxl-facebook-circle icon' style="background-color: #3b5998;border: 2px solid black;border-radius: 50%;color: white;padding: 5px;text-decoration: none; color: inherit;" undefined ></i></a>
+                  <a href="#"><i class='bx bxl-twitter icon' style="background-color: #00acee;border: 2px solid black;border-radius: 50%;color: white;padding: 5px;text-decoration: none; color: inherit;"></i></a>
+                  <a href="#"><i class='bx bxl-google icon' style="background-color:  #c71610	;border: 2px solid black;border-radius: 50%;color: white;padding: 5px;text-decoration: none; color: inherit;" ></i></a>
+                  <a href="#"><i class='bx bxl-instagram icon' style="background: linear-gradient(to top, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);border: 2px solid black;border-radius: 50%;color: white;padding: 5px;text-decoration: none; color: inherit;" ></i></a>
+              </div>
+          </div>
+      </div> 
+    </div>       
+  </nav>
+  </section>
+
+<script src="js/Product.js"></script>
+</body>
+</html>
