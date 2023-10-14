@@ -39,3 +39,16 @@ a{
     text-decoration: none; 
     color: inherit;
 }
+
+
+
+/**************Responsive*********************/
+@media only screen and (max-width: 390px) {
+    .product-box {
+      flex-direction: column;
+    }
+  
+    .product-item img {
+      width: 100%;
+    }
+  }

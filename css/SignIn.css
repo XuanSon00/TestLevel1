@@ -69,3 +69,34 @@ a{
 .footer{
     margin-top: 20px;
 }
+/*  */
+@media only screen and (max-width: 390px) {
+    .form {
+      width: 90%;
+      padding: 30px;
+    }
+  
+    .form input {
+      width: 100%;
+    }
+  
+    .confirm {
+      width: 100%;
+      padding: 15px;
+    }
+
+    .gender{
+        display: flex;
+    }
+   
+    
+    .pass, .confirm-pass {
+        display: flex;
+    }
+
+ 
+    .footer{
+        height: 200px;
+
+    }
+}

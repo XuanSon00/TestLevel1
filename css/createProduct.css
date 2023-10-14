@@ -9,7 +9,7 @@ body{
 .form{
     padding :20px;
     background-color: rgb(238, 234, 234);
-    width: 20%;
+    width: 100%;
     margin: auto;
     text-align: center;
 }
@@ -73,3 +73,26 @@ a{
 .footer{
     margin-top: 20px;
 }
+
+/**************Responsive*********************/
+@media only screen and (max-width: 390px) {
+    .form {
+      padding: 16px;
+      width: 50%;
+    }
+  
+    .form span {
+      margin-right: 5px;
+      font-size: 12px;
+    }
+  
+    .form input {
+      height: 28px;
+      font-size: 12px;
+    }
+  
+    .confirm {
+      padding: 12px;
+      font-size: 12px;
+    }
+  }

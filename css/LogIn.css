@@ -48,3 +48,26 @@ a{
     text-decoration: none; 
     color: inherit;
 }
+/**************Responsive*********************/
+
+@media only screen and (max-width: 390px) {
+    .form {
+      width: 90%;
+      margin: 10px auto;
+      padding: 20px;
+    }
+  
+    .textbox {
+      width: 100%;
+    }
+  
+    .button {
+      width: 100%;
+    }
+
+    .footer{
+      
+        height: 300px;
+    }
+
+}
