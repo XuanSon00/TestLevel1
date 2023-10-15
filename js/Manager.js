@@ -48,23 +48,24 @@ function readAll(){
         //console.log(result[i])*/
         var tr = `<tr>
         <td><input type="checkbox"></td>
-        <td>${result[i].name}</td>
+        <td >${result[i].name}</td>
         <td>${result[i].email}</td>
         <td>${result[i].phone}</td>
         <td>${result[i].gender}</td>
         <td>${result[i].date}</td>
-        <td><button class = "edit">Sửa</button></td>
+        <td><button class="edit">Sửa</button>.</td>
         <td><button onclick="deleteBtn()" style="cursor: pointer" class="delete">Xóa</button></td>
       </tr>`;
     tbody.insertAdjacentHTML('beforeend', tr);
         }
         deleteBtn()
         CheckboxAll()
+        
     };
 
-
+}
     
-}/*----------------------Thêm sự kiện khi ấn nút "Xóa" (unfinish)--------------------*/
+/*----------------------Thêm sự kiện khi ấn nút "Xóa" (unfinish)--------------------*/
 
 function deleteBtn(button){
     var deleteBtns = document.querySelectorAll(".delete");
@@ -124,4 +125,127 @@ function deleteAll(){
         del.remove();
     });
     deleteBtn()
+}
+
+/*----------------------Nút sửa thông tin(unfinish) --------------------*/
+var db; //Khởi tạo DB
+
+request.onupgradeneeded = function(event) {
+    db = event.target.result;
+    var objectStore = db.createObjectStore("Info",{autoIncrement: true});
+
+}
+
+request.onerror =function(event){
+    console.log("error: ");
+}
+request.onsuccess = function (event) {
+    db = request.result;
+    readAll()
+    
+    console.log("success: "+ db);
+};
+
+
+var editButton = document.getElementsByClassName("edit");
+for (var i = 0; i < editButton.length; i++) {
+    editButton[i].addEventListener("click", editUser);
+  }
+  
+
+
+function editUser(){
+    debugger;
+    var editRequest = db.transaction(["Info"], "readwrite").objectStore("Info");
+    
+
+    editRequest.onerror =function(event){
+    console.log("error: ");
+}
+
+
+    //console.log(request)
+    editRequest.onsuccess =function(event){
+        //lấy ra kết quả trả về
+        var result = editRequest.result;
+        var editRequest = db.transaction(["Info"], "readwrite").objectStore("Info");
+
+
+        var updateName = prompt ("Nhập tên mới")
+        var updateEmail = prompt ("Nhập email mới")
+        var updatePhone = prompt ("Nhập sđt mới")
+
+        cursorRequest = editRequest.openCursor();
+        cursorRequest.onsuccess = function(event){
+            var cursor =event.target.result;
+            if (result) {
+                //kiểm tra điều kiện cập nhật 
+                if (cursor.value.name === name && cursor.value.email === email && cursor.value.phone === phone){
+                    //cập nhật dữ liệu
+                    cursor.value.name = updateName;
+                    cursor.value.email = updateEmail;
+                    cursor.value.phone = updatePhone;
+
+                //gọi hàm để cập nhật bản ghi
+                var update = cursor.update(cursor.value);
+                update.onsuccess = function(){
+                    console.log("lưu thành công")
+                };
+                }
+            }
+            cursor.continue();
+        }
+    }
+}
+
+/*----------------------Tìm kiếm (unfinished)--------------------*/
+function searchUser(){
+    var FindUser = document.querySelector("input[type='search']");   // Lấy phần tử input search
+    var searchValue = FindUser.value.trim();
+
+    if(searchValue !== "") {
+        clearTable();  //xóa phần bảng hiện tại
+
+        // kết nối cơ sở dữ liệu IndexedDB
+        var request = db.transaction(["Info"],"readonly").objectStore("Info").index("name");
+        // Tìm kiếm dữ liệu
+        var request = request.getAll(IDBKeyRange.bound(searchValue, searchValue + "\uffff"));
+
+        request.onsuccess =function(event){
+            var result = request.result;
+            var tbody = document.querySelector("#tableBody")
+
+            if(result.length >0) {
+                for ( var i = 0; i <result.length; i++){
+                    var tr = `<tr>
+                        <td><input type="checkbox"></td>
+                        <td >${result[i].name}</td>
+                        <td>${result[i].email}</td>
+                        <td>${result[i].phone}</td>
+                        <td>${result[i].gender}</td>
+                        <td>${result[i].date}</td>
+                        <td><button class="edit">Sửa</button></td>
+                        <td><button onclick="deleteBtn()" style="cursor: pointer" class="delete">Xóa</button></td>
+                        </tr>`;
+    tbody.insertAdjacentHTML('beforeend', tr);
+                }
+            } else{
+                        // Hiển thị thông báo khi không tìm thấy kết quả
+                var tr =`<tr><td span="7">Không tìm thấy kết quả.</td>
+                        </tr> `
+                tbody.insertAdjacentHTML("beforeend", tr);
+            }
+        };
+        request.onerror = function (event) {
+            console.log("Lỗi tìm kiếm: " + event.target.errorCode);
+          };
+          
+    }
+}
+
+function clearTable(){ //xóa phần bảng hiện tại
+    var tbody = document.querySelector("#tableBody");
+    while (tbody.firstChild){
+        tbody.removeChild(tbody.firstChild)
+    }
 }
