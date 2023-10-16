@@ -189,6 +189,7 @@ function renderProduct(){
     document.getElementById('product-items').innerHTML = data
 }
 
+/*
 function searchProducts() {
     let valueSearch = document.getElementById("search").value.toLowerCase();
     let filteredProducts = products.filter(value => {
@@ -207,7 +208,7 @@ function searchProducts() {
     // Chuyển hướng người dùng đến trang search.html
     window.location.href = searchURL;
   }
-  
+  */
 
 
 
@@ -372,7 +373,7 @@ productInCart[index] ={
     ...productInCart[index], // lấy ra dữ liệu đã lưu trong local storage
     quantity: ++productInCart[index].quantity // lấy ra và tăng giá trị số lượng
 }
-saveToLocalStorage() 
+saveToLocalStorage() //lưu lại vào trong local storage
 productToTable() 
 totalPrice()
 }
@@ -402,13 +403,13 @@ totalPrice() //load lại tổng tiền trong thanh toán
 
 /*--------------Tổng giá tiền thanh toán table-------------*/
 function totalPrice(){
-    if(productInCart !== ''){
+    if(productInCart !== 0){
         let total = 0;
           for (let i = 0; i < productInCart.length; i++){
-            total += (productInCart[i].quantity * productInCart[i].price.replace(/[.]/g, '')).toLocaleString('vi-VN')
+            total += productInCart[i].quantity * parseFloat(productInCart[i].price.replace(/[.]/g, '')); // Sửa thành parseFloat để chuyển đổi chuỗi thành số thực
           }
-          document.getElementById("totalMoney").innerHTML = total.replace(/^0+/, '').toLocaleString('vi-VN') // loại bỏ số 0 ở đầu
-}
+          document.getElementById("totalMoney").innerHTML = total.toLocaleString('vi-VN'); // Không cần replace và loại bỏ số 0 ở đầu
+        }
 }
 
 function cartLoadPage(){
@@ -418,4 +419,4 @@ function cartLoadPage(){
 }
 
 
-/*----------------------Tìm kiếm--------------------*/
+

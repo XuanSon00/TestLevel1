@@ -47,7 +47,7 @@ function confirm(){
         });
 
         if (LogIn) {
-            window.location.href = "homepage.html";
+            window.location.href = "Manager.html";
         } else {
             Swal.fire({
                 icon: 'Error',

@@ -30,102 +30,143 @@ function readAll(){
     };
 
 
-    //console.log(request)
-    request.onsuccess =function(event){
-        //lấy ra kết quả trả về
-        var result = request.result;
-        // sủ dụng dom thêm vào danh sách
-        var tbody = document.querySelector("#table tbody");
-        console.log(result);
-        for(var i =0; i < result.length; i++){  
-          /*  //tạo tr
-            var tr = document.createElement("tr");
-            var trcontent = document.createElement("td");
-            trcontent.innerText =result[i].name;
-            //thêm td vào tr
-            tr.insertAdjacentHTML('beforeend', trcontent)
-            tbody.insertAdjacentHTML('beforeend', tr)
-        //console.log(result[i])*/
-        var tr = `<tr>
+const transaction = db.transaction(['Product'], 'readonly');
+const objectStore = transaction.objectStore('Product');
+
+const request1 = objectStore.openCursor();
+
+request1.onsuccess = (event) => {
+const cursor = event.target.result;
+
+if (cursor) {
+    const key = cursor.key; // Access the key
+    const result = cursor.value; // Access the value
+
+
+    // Perform operations with the key and value
+    //console.log('Key:', key, 'Value:', value);
+    var tbody = document.querySelector("#table tbody");
+    var tr = `<tr>
         <td><input type="checkbox" ></td>
-        <td>${result[i].name}</td>
-        <td>${result[i].price}</td>
-        <td>${result[i].producer}</td>
-        <td>${result[i].number}</td>
-        <td>${result[i].describe}</td>
-        <td>${result[i].image}</td>
-        <td><button class = "edit">Sửa</button></td>
-        <td><button onclick="deleteBtn(this)" style="cursor: pointer" class="delete">Xóa</button></td>
+        <td>${result.name}</td>
+        <td>${result.price}</td>
+        <td>${result.producer}</td>
+        <td>${result.number}</td>
+        <td>${result.describe}</td>
+        <td>${result.image}</td>
+        <td><button class="edit" onclick="editBtn(${key})">Sửa</button></td>
+        <td><button onclick="deleteBtn(`+key+`)" style="cursor: pointer" class="delete">Xóa</button></td>
       </tr>`;
     tbody.insertAdjacentHTML('beforeend', tr);
-        }
-        deleteBtn()
-
-        CheckboxAll()
-    };
     
+
+    cursor.continue();
+    };
+}
+request.onsuccess =function(event){
+    const result1 = event.target.result;
+    console.log(result1);
+    //lấy ra kết quả trả về
+    var result = request.result;
+    // sủ dụng dom thêm vào danh sách
+    var tbody = document.querySelector("#table tbody");
+    
+    for(var i =0; i < result1.length; i++){  
+
+        const item = result1[i];
+        const keyValue = item.key; // Access the key
+        const value = item.value; // Access the value
+        //console.log(keyValue)
+
+    }
+    deleteBtn()
+    editBtn(key)
+   
+    
+};
+
+
+
 }
 /*----------------------Thêm sự kiện khi ấn nút "Xóa" (unfinish)--------------------*/
 
-function deleteBtn(button){
-    var deleteBtns = document.querySelectorAll(".delete");
-    deleteBtns.forEach(function(button){
-        button.addEventListener("click", function(){
-            var del = button.closest("tr");
-            var productName = del.querySelector("td:nth-child(2)").innerHTML; //lấy tên sản phẩm
-            var indexNumber = 0; // chỉ mục trong indexDb số thứ tự
-           //var del = button.parentElement.parentElement;
-            del.remove();
-
-            //xóa tên sản phẩm trong indexed db
-            var request = db.transaction(["Product"], "readwrite").objectStore("Product").index("indexNumber");
-            request = request.get(productName)
-
-            request.onsuccess = function (event) {
-                var result = event.target.result;
-        
-                if(result){
-                    var delProduct = request.delete(result.name);
-                    delProduct.onsuccess  = function() {
-                        console.log("Đã xóa thành công tên sản phẩm");
-                        deleteAll()
-                      };
-                      delProduct.onerror = function() {
-                        console.log("Lỗi xóa tên sản phẩm");
-                      };
-                }
-        
-        }});
-    });
+function deleteBtn(key){
     
+    // Tạo mới 1 transaction
+    var request = db.transaction(["Product"], "readwrite");
+    // Lấy ra đối tượng cần lưu trữ
+    request = request.objectStore("Product");
+    // Xóa dùng phương thức delete(), truyền vào key cần xóa
+    request.delete(key); // Xóa dữ liệu với key là 1
+
+    deleteAll()
 }
 
 /*----------------------Nút checkbox--------------------*/
-function CheckboxAll() {
-    let Allcheckbox = document.getElementById("selectAll")
-    let checkboxes = document.querySelectorAll('#tableBody input[type="checkbox"]');
-
-//ấn checkbox chọn tất cả
-    Allcheckbox.onclick =function(){
-        checkboxes.forEach(function(checkbox){
-            checkbox.checked = Allcheckbox.checked;
-        });
-    }
-    deleteBtn()
-}
-
-/*----------------------nút xóa tất cả(unfinish)--------------------*/
-var deleteAllBtn = document.querySelector('.manage button');
-deleteAllBtn.addEventListener('click', deleteAll);
-
-function deleteAll(){
-    var checkboxes = document.querySelectorAll('#tableBody input[type="checkbox"]:checked')
+function checkAll(myCheckbox) {
+    var checkboxes = document.querySelectorAll("#tableBody input[type='checkbox']");
+    
     checkboxes.forEach(function(checkbox) {
-        var del = checkbox.closest('tr');
-        del.remove();
+      checkbox.checked = myCheckbox.checked;
     });
-    deleteBtn()
+  }
+
+/*----------------------nút xóa tất cả--------------------*/
+var deleteAll = document.getElementById("deleteAll")
+deleteAll.addEventListener("click",function(){
+    var transaction = db.transaction(["Product"], "readwrite");
+    var objectStore = transaction.objectStore("Product");
+    var request2 = objectStore.clear();
+
+    request2.onsuccess =function(event){
+        var tbody = document.querySelector("#table tbody")
+        tbody.innerHTML="";
+        //window.location.href = "createProduct.html";
+        
+        console.log("xóa tất cả dữ liệu thành công!!")
+    }
+    request2.onerror = function(event) {
+        console.log("Lỗi xóa dữ liệu");
+      };
+})
+
+/*----------------------Nút sửa thông tin --------------------*/
+function editBtn(key) {
+    var transaction = db.transaction(["Product"], "readwrite");
+    var objectStore = transaction.objectStore("Product");
+
+    var request3 = objectStore.get(key);
+    
+
+    var newProduct = prompt("Nhập tên sản phầm:");
+    var newPrice = prompt("Nhập giá:");
+    var newProducer = prompt("Nhập nhà sản xuất:");
+    var newNumber = prompt("Nhập Số Lượng:");
+    var newDescribe = prompt("Nhập chi tiết sản pẩm:");
+    
+
+
+    request3.onsuccess = function(event) {
+        var data = event.target.result;
+        data.nameProduct = newProduct;
+        data.priceProduct = newPrice;
+        data.producerProduct = newProducer;
+        data.numberProduct = newNumber;
+        data.describeProduct =  newDescribe;
+
+        var update = objectStore.put(data, key);
+        update.onsuccess = function(event) {
+            console.log("Dữ liệu đã được cập nhật thành công");
+        };
+        update.onerror = function(event) {
+            console.log("Lỗi khi cập nhật dữ liệu");
+        };
+    };
+
+    request3.onerror = function(event) {
+        console.log("Lỗi khi tìm kiếm bản ghi");
+    };
 }
 
-/*----------------------Tìm kiếm--------------------*/
+
 

@@ -165,7 +165,7 @@ function check(event){
     //var objectStore = transaction.objectStore("Info");
         request = request.objectStore("Info");
     //Thêm vào "Thông Tin" sử dụng add()
-        request = request.add({name: name, email: email, phone: phone,gender: gender,user: user,password: password});
+        request = request.add({name: name, email: email, phone: phone,gender: gender,user: user,password: password, date: new Date()});
 
         request.onsuccess = function(event){    
             console.log('Success');
