@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">  <!--Bootstrap-->
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery.js"></script> <!--jquery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>  <!--moment (định dạng thời gian)-->
     <link rel="stylesheet" href="css/Manager.css">
 </head>
 <body onload="productTotal()">
@@ -18,7 +19,7 @@
     <section>
         <nav class="navbar navbar-expand-lg navbar-light bg-dark">
           <div class="container-fluid">
-            <a class="navbar-brand  text-white" href="index.html"><i style="font-size: 50px;" class='bx bxl-apple'></i></a>
+            <a class="navbar-brand  text-white" href="homepage.html"><i style="font-size: 50px;" class='bx bxl-apple'></i></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -27,31 +28,38 @@
                 
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Thương hiệu
+                    Loại Sản Phẩm
                   </a>
                   <ul class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item text-light" href="#">Điện Thoại</a></li>
-                    <li><a class="dropdown-item text-light" href="#">Tablet</a></li>
+                    <li><a class="dropdown-item text-light" href="phone.html">Điện Thoại</a></li>
+                    <li><a class="dropdown-item text-light" href="tablet.html">Tablet</a></li>
                   </ul>
                 </li>
   
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Loại Sản Phẩm
+                    Thương hiệu
                   </a>
                   <ul class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item text-light" href="detail.html">Apple</a></li>
-                    <li><a class="dropdown-item text-light" href="#">Samsung</a></li>
+                    <li><a class="dropdown-item text-light condition"  href="Apple.html">Apple</a></li>
+                    <li><a class="dropdown-item text-light condition"  href="Samsung.html">Samsung</a></li>
+                  </ul>
+                </li>
+  
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Quản Lý
+                  </a>
+                  <ul class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item text-light condition"  href="Manager.html">Người dùng</a></li>
+                    <li><a class="dropdown-item text-light condition"  href="manageProduct.html">Sản Phẩm</a></li>
                   </ul>
                 </li>
   
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="#">Hóa Đơn</a>
-                </li>
-  
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="index.html">LogOut</a>
-                </li>
+                    <a class="nav-link text-white" href="index.html">LogOut</a>
+                  </li>
   
                
               </ul>
@@ -70,15 +78,15 @@
         <span>Quản lý người dùng</span>
         <div class="manage">
             <input type="search">
-            <button >Tìm kiếm</button>
-            <button >Xóa tất cả</button>
+            <button onclick="searchByName()">Tìm kiếm</button>
+            <button onclick ="deleteAll()" id="deleteAll" >Xóa tất cả</button>
         </div>
         <div id="table">
             <form action="">
                 <table>
                     <thead>
                         <tr>
-                            <th><input type="checkbox" id="selectAll"></th>
+                            <th><input type="checkbox" id="selectAll" onclick="checkAll(this)"></th>
                             <th>Họ Và Tên</th>
                             <th>Email</th>
                             <th>Điện Thoại</th>
@@ -152,7 +160,8 @@
         </nav>
         </section>   
 
-        <script src="js/Manager.js"></script>
+
         <script src="js/Product.js"></script>
+        <script src="js/Manager.js"></script>
 </body>
 </html>

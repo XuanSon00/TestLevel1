@@ -26,7 +26,7 @@
                 
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Thương hiệu
+                Loại Sản Phẩm    
                   </a>
                   <ul class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item text-light condition" href="#">Điện Thoại</a></li>
@@ -36,7 +36,7 @@
   
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Loại Sản Phẩm
+                Thương hiệu
                   </a>
                   <ul class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item text-light condition" href="#">Apple</a></li>
@@ -87,8 +87,8 @@
             <span class="error" id="phoneErrorLength">Số điện thoại tối đa 11 số</span>
     
         </div>
-        <div>
-            <span>Giới tính:</span>
+        <div class="gender">
+            <span >Giới tính:</span>
             <span>Nam</span>
             <input type="radio" name="Gender" id="male" value="Male">
             <span>Nữ</span>
@@ -103,17 +103,21 @@
         </div>
         <div>
             <span>Mật khẩu:</span><br>
+            <div class="pass">
             <input type="password" id="password" style="margin-left: 30px;">
-            <input type="checkbox" onclick="ShowPassword()" id="checkbox1" ><i class='bx bx-show'></i>
+            <i class='bx bx-show'><input type="checkbox" onclick="ShowPassword()" id="checkbox1" ></i>
+            </div>
             <span class="error" id="passwordError">Vui lòng không bỏ trống</span>
             <span class="error" id="passwordErrorLength">Vui lòng điền từ 8 ký tự trở lên</span>
             <span class="error" id="passwordCheck">Mật khẩu cần có độ dài 8 ký tự, ít nhất 1 ký tự thường, 1 ký tự hoa, 1 ký tự đặc biệt trong dãy (@#$&) và 1 ký tự số</span>
     
         </div>
-        <div>
+        <div >
             <span>Xác nhận mật khẩu:</span><br>
+            <div class="confirm-pass">
             <input type="password" id="confirmPassword" style="margin-left: 30px;">
-            <input type="checkbox" onclick="ShowConfirmPassword()" id="checkbox2" ><i class='bx bx-show'></i>
+            <i class='bx bx-show'><input type="checkbox" onclick="ShowConfirmPassword()" id="checkbox2" ></i>
+            </div>
             <span class="error" id="confirmError">Vui lòng không bỏ trống</span>
             <span class="error" id="confirmErrorCheck">Vui lòng nhập chính xác với mật khẩu</span>
         </div>
