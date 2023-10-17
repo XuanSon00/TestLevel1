@@ -411,6 +411,7 @@ function redirectToDetail(productId) {
     window.location.href = 'detail.html';
 
 }
+
 var productId = localStorage.getItem('productId');
 var product = products.find(value => value.id === parseInt(productId));  //đổi giá trị của biến productId từ kiểu dữ liệu chuỗi (string) sang kiểu dữ liệu số nguyên 
 
