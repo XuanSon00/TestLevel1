@@ -406,6 +406,7 @@ function renderProduct(){
 }
 
 /*-------Hiển thị chi tiết sản phẩm------------*/
+/*
 function redirectToDetail(productId) {
     localStorage.setItem('productId', productId);
     window.location.href = 'detail.html';
@@ -466,7 +467,7 @@ if (product) {
     </div>
     `;
 }
-
+*/
 
 
 /*
