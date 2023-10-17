@@ -113,8 +113,8 @@ request1.onsuccess = (event) => {
     //   </tr>`;
     // tbody.insertAdjacentHTML('beforeend', tr);
         }
-        deleteBtn()
-        editBtn(key)
+        //deleteBtn()
+        //editBtn(key)
        
         
     };
@@ -230,40 +230,65 @@ function editBtn(key) {
     request3.onerror = function(event) {
         console.log("Lỗi khi tìm kiếm bản ghi");
     };
+    searchByName()
 }
 
 
 
 /*----------------------Tìm kiếm (unfinished)--------------------*/
-var transaction = db.transaction(["Info"], "readonly");
-  var objectStore = transaction.objectStore("Info");
-  var request4 = objectStore.index("name").openCursor(IDBKeyRange.only(name));
-  var tbody = document.querySelector("#table tbody");
-  tbody.innerHTML = ""; // Xóa các dòng hiện tại trong bảng
 
-  request4.onsuccess = function(event) {
-    var cursor = event.target.result;
+  /*-------------Tìm kiếm---------------------*/
+  function searchByName(){
 
-    if (cursor) {
-      var value = cursor.value;
+    var name = document.getElementById("search").value;
+    console.log(name)
 
-      // Tạo dòng mới trong bảng với thông tin tìm kiếm được
-      var tr = `<tr>
-        <td><input type="checkbox" data-key="${cursor.key}"></td>
-        <td>${value.name}</td>
-        <td>${value.email}</td>
-        <td>${value.phone}</td>
-        <td>${value.gender}</td>
-        <td></td>
-        <td><button class="edit" onclick="editBtn(${cursor.key})">Sửa</button></td>
-        <td><button onclick="deleteBtn(${cursor.key})" style="cursor: pointer" class="delete">Xóa</button></td>
+    //sử dụng getAll()
+  var request = db.transaction(["Info"]).objectStore("Info").getAll();
+    //let info =[]
+    request.onerror = function(event){
+        console.log('Error')
+    };
+
+
+  const transaction = db.transaction(["Info"], "readonly");
+  const objectStore = transaction.objectStore("Info");
+
+  const request5 = objectStore.openCursor();
+
+  request5.onsuccess = (event) => {
+    const cursor = event.target.result;
+
+    if(cursor){
+      const key = cursor.key; //access the key
+      const result2 = cursor.value; //access the value
+      const date = moment(result.date);
+      const formatDate = date.format('DD/MM/YYYY HH:mm')
+
+      //const lowerCaseName = result.name.toLowerCase(); //chuyển viết Hoa của chuỗi thành viết thường
+
+       //định dạng lại ngày tháng năm và giờ trong bảng
+    
+
+    
+      //indexOf = 0 là có ; -1 là k có
+      if(result2.name.indexOf(name) > -1){ 
+    var tbody = document.querySelector("#table tbody");
+    var tr = `<tr>
+        <td><input type="checkbox" data-key="1" ></td>
+        <td >${result2.name}</td>
+        <td>${result2.email}</td>
+        <td>${result2.phone}</td>
+        <td>${result2.gender}</td>
+        <td>${formatDate}</td>
+        <td><button class="edit" onclick="editBtn(${key})">Sửa</button></td>
+        <td><button onclick="deleteBtn(`+key+`)" style="cursor: pointer" class="delete">Xóa</button></td>
       </tr>`;
-      tbody.insertAdjacentHTML("beforeend", tr);
+    tbody.insertAdjacentHTML('beforeend', tr);
+      }
 
       cursor.continue();
+      
     }
-  };
-
-  request4.onerror = function(event) {
-    console.log("Lỗi khi tìm kiếm theo tên");
-  };
+  }
+}

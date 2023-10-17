@@ -158,17 +158,20 @@ function check(event){
         let user = document.getElementById("user").value
         let password = document.getElementById("password").value 
 
+    // kiểm tra xem tất cả ô đã được chọn chưa
+    if(name && email && phone && gender && user && password){
     //Tạo mới 1 transaction  
     var request = db.transaction(["Info"], "readwrite");
     //var request = db.transaction(["Info"], "readwrite");
     //Lấy ra đối tượng lưu trữ
     //var objectStore = transaction.objectStore("Info");
-        request = request.objectStore("Info");
+    
+    request = request.objectStore("Info");
     //Thêm vào "Thông Tin" sử dụng add()
         request = request.add({name: name, email: email, phone: phone,gender: gender,user: user,password: password, date: new Date()});
 
         request.onsuccess = function(event){    
-            console.log('Success');
+         console.log('Success');
             //chuyển trang hoặc thông báo thêm thành công
             Swal.fire({
                 icon: 'success ',
@@ -178,8 +181,15 @@ function check(event){
         };
         request.onerror = function(event){
             console.log('Error');
-            
+
         }
+        } else {
+            swal.fire({
+                icon: "error",
+                title:"Vui lòng nhập đủ thông tin cần thiết"
+            })
+        }
+
     };
     
   

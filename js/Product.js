@@ -5,6 +5,15 @@ const products =[
         img: "img/iphone 11.jpg",
         price: '10.690.000',
         tag: ['iphone', 'apple'],
+        Screen: "OLED,6.1'',Super Retina XDR",
+        OS: "iOS 17",
+        RearCamera: "Chính 48 MP & Phụ 12 MP",
+        FrontCamera: "12MP",
+        Chip: "Apple A16 Bionic",
+        RAM: "6GB",
+        StorageCapacity: "256 GB",
+        SIM: "1 Nano SIM & 1 eSIM,Hỗ trợ 5G",
+        BatterPhoneCharger: "3349 mAh, 20W"
     },
     {
         id: 2,
@@ -12,6 +21,15 @@ const products =[
         img: "img/iPhone 12 64GB.jpg",
         price: '13.490.000',
         tag: ['iphone', 'apple'],
+        Screen: "OLED,6.1'',Super Retina XDR",
+        OS: "iOS 17",
+        RearCamera: "Chính 48 MP & Phụ 12 MP",
+        FrontCamera: "12MP",
+        Chip: "Apple A16 Bionic",
+        RAM: "6GB",
+        StorageCapacity: "256 GB",
+        SIM: "1 Nano SIM & 1 eSIM,Hỗ trợ 5G",
+        BatterPhoneCharger: "3349 mAh, 20W"
     },
     {
         id: 3,
@@ -19,6 +37,15 @@ const products =[
         img: "img/iPhone 13.jpg",
         price: '16.690.000',
         tag: ['iphone', 'apple'],
+        Screen: "OLED,6.1'',Super Retina XDR",
+        OS: "iOS 17",
+        RearCamera: "Chính 48 MP & Phụ 12 MP",
+        FrontCamera: "12MP",
+        Chip: "Apple A16 Bionic",
+        RAM: "6GB",
+        StorageCapacity: "256 GB",
+        SIM: "1 Nano SIM & 1 eSIM,Hỗ trợ 5G",
+        BatterPhoneCharger: "3349 mAh, 20W"
     },
     {
         id: 4,
@@ -26,6 +53,15 @@ const products =[
         img: "img/iPhone 14 Plus..jpg",
         price: '21.790.000',
         tag: ['iphone', 'apple'],
+        Screen: "OLED,6.1'',Super Retina XDR",
+        OS: "iOS 17",
+        RearCamera: "Chính 48 MP & Phụ 12 MP",
+        FrontCamera: "12MP",
+        Chip: "Apple A16 Bionic",
+        RAM: "6GB",
+        StorageCapacity: "256 GB",
+        SIM: "1 Nano SIM & 1 eSIM,Hỗ trợ 5G",
+        BatterPhoneCharger: "3349 mAh, 20W"
     },
     {
         id: 5,
@@ -33,6 +69,15 @@ const products =[
         img: "img/iphone 14 pro-max.jpg",
         price: '26.490.000',
         tag: ['iphone', 'apple'],
+        Screen: "OLED,6.1'',Super Retina XDR",
+        OS: "iOS 17",
+        RearCamera: "Chính 48 MP & Phụ 12 MP",
+        FrontCamera: "12MP",
+        Chip: "Apple A16 Bionic",
+        RAM: "6GB",
+        StorageCapacity: "256 GB",
+        SIM: "1 Nano SIM & 1 eSIM,Hỗ trợ 5G",
+        BatterPhoneCharger: "3349 mAh, 20W"
     },
     {
         id: 6,
@@ -40,6 +85,15 @@ const products =[
         img: "img/iPhone 14 Pro.jpg",
         price: '24.190.000',
         tag: ['iphone', 'apple'],
+        Screen: "OLED,6.1'',Super Retina XDR",
+        OS: "iOS 17",
+        RearCamera: "Chính 48 MP & Phụ 12 MP",
+        FrontCamera: "12MP",
+        Chip: "Apple A16 Bionic",
+        RAM: "6GB",
+        StorageCapacity: "256 GB",
+        SIM: "1 Nano SIM & 1 eSIM,Hỗ trợ 5G",
+        BatterPhoneCharger: "3349 mAh, 20W"
     },
     {
         id: 7,
@@ -47,6 +101,15 @@ const products =[
         img: "img/iPhone 14.jpg",
         price: '19.190.000',
         tag: ['iphone', 'apple'],
+        Screen: "OLED,6.1'',Super Retina XDR",
+        OS: "iOS 17",
+        RearCamera: "Chính 48 MP & Phụ 12 MP",
+        FrontCamera: "12MP",
+        Chip: "Apple A16 Bionic",
+        RAM: "6GB",
+        StorageCapacity: "256 GB",
+        SIM: "1 Nano SIM & 1 eSIM,Hỗ trợ 5G",
+        BatterPhoneCharger: "3349 mAh, 20W"
     },
     {
         id: 8,
@@ -54,6 +117,15 @@ const products =[
         img: "img/iPhone 15 Plus.jpg",
         price: '25.990.000',
         tag: ['iphone', 'apple'],
+        Screen: "OLED,6.1'',Super Retina XDR",
+        OS: "iOS 17",
+        RearCamera: "Chính 48 MP & Phụ 12 MP",
+        FrontCamera: "12MP",
+        Chip: "Apple A16 Bionic",
+        RAM: "6GB",
+        StorageCapacity: "256 GB",
+        SIM: "1 Nano SIM & 1 eSIM,Hỗ trợ 5G",
+        BatterPhoneCharger: "3349 mAh, 20W"
     },
     {
         id: 9,
@@ -61,6 +133,15 @@ const products =[
         img: "img/iPhone 15 Pro Max.jpg",
         price: '34.990.000',
         tag: ['iphone', 'apple'],
+        Screen: "OLED,6.1'',Super Retina XDR",
+        OS: "iOS 17",
+        RearCamera: "Chính 48 MP & Phụ 12 MP",
+        FrontCamera: "12MP",
+        Chip: "Apple A16 Bionic",
+        RAM: "6GB",
+        StorageCapacity: "256 GB",
+        SIM: "1 Nano SIM & 1 eSIM,Hỗ trợ 5G",
+        BatterPhoneCharger: "3349 mAh, 20W"
     },
     {
         id: 10,
@@ -68,6 +149,15 @@ const products =[
         img: "img/iPhone 15.jpg",
         price: '21.190.000',
         tag: ['iphone', 'apple'],
+        Screen: "OLED,6.1'',Super Retina XDR",
+        OS: "iOS 17",
+        RearCamera: "Chính 48 MP & Phụ 12 MP",
+        FrontCamera: "12MP",
+        Chip: "Apple A16 Bionic",
+        RAM: "6GB",
+        StorageCapacity: "256 GB",
+        SIM: "1 Nano SIM & 1 eSIM,Hỗ trợ 5G",
+        BatterPhoneCharger: "3349 mAh, 20W"
     },
     {
         id: 11,
@@ -75,6 +165,15 @@ const products =[
         img: "img/iPhone 15 Pro.jpg",
         price: '27.990.000',
         tag: ['iphone', 'apple'],
+        Screen: "OLED,6.1'',Super Retina XDR",
+        OS: "iOS 17",
+        RearCamera: "Chính 48 MP & Phụ 12 MP",
+        FrontCamera: "12MP",
+        Chip: "Apple A16 Bionic",
+        RAM: "6GB",
+        StorageCapacity: "256 GB",
+        SIM: "1 Nano SIM & 1 eSIM,Hỗ trợ 5G",
+        BatterPhoneCharger: "3349 mAh, 20W"
     },
     {
         id: 12,
@@ -82,6 +181,15 @@ const products =[
         img: "img/iPad 9 WiFi 64GB.jpg",
         price: '7.990.000',
         tag: ['ipad', 'apple'],
+        Screen: "OLED,6.1'',Super Retina XDR",
+        OS: "iOS 17",
+        RearCamera: "Chính 48 MP & Phụ 12 MP",
+        FrontCamera: "12MP",
+        Chip: "Apple A16 Bionic",
+        RAM: "6GB",
+        StorageCapacity: "256 GB",
+        SIM: "1 Nano SIM & 1 eSIM,Hỗ trợ 5G",
+        BatterPhoneCharger: "3349 mAh, 20W"
     },
     {
         id: 13,
@@ -89,6 +197,15 @@ const products =[
         img: "img/iPad Air 5 M1 Wifi 64GB.jpg",
         price: '14.590.000',
         tag: ['ipad', 'apple'],
+        Screen: "OLED,6.1'',Super Retina XDR",
+        OS: "iOS 17",
+        RearCamera: "Chính 48 MP & Phụ 12 MP",
+        FrontCamera: "12MP",
+        Chip: "Apple A16 Bionic",
+        RAM: "6GB",
+        StorageCapacity: "256 GB",
+        SIM: "1 Nano SIM & 1 eSIM,Hỗ trợ 5G",
+        BatterPhoneCharger: "3349 mAh, 20W"
     },
     {
         id: 14,
@@ -96,6 +213,15 @@ const products =[
         img: "img/iPad 10 WiFi 64GB.jpg",
         price: '11.390.000',
         tag: ['ipad', 'apple'],
+        Screen: "OLED,6.1'',Super Retina XDR",
+        OS: "iOS 17",
+        RearCamera: "Chính 48 MP & Phụ 12 MP",
+        FrontCamera: "12MP",
+        Chip: "Apple A16 Bionic",
+        RAM: "6GB",
+        StorageCapacity: "256 GB",
+        SIM: "1 Nano SIM & 1 eSIM,Hỗ trợ 5G",
+        BatterPhoneCharger: "3349 mAh, 20W"
     },
     {
         id: 15,
@@ -103,6 +229,15 @@ const products =[
         img: "img/iPad Pro M1 12.9 inch WiFi 2TB (2021).jpg",
         price: '54.990.000',
         tag: ['ipad', 'apple'],
+        Screen: "OLED,6.1'',Super Retina XDR",
+        OS: "iOS 17",
+        RearCamera: "Chính 48 MP & Phụ 12 MP",
+        FrontCamera: "12MP",
+        Chip: "Apple A16 Bionic",
+        RAM: "6GB",
+        StorageCapacity: "256 GB",
+        SIM: "1 Nano SIM & 1 eSIM,Hỗ trợ 5G",
+        BatterPhoneCharger: "3349 mAh, 20W"
     },
     {
         id: 16,
@@ -110,6 +245,15 @@ const products =[
         img: "img/iPad Pro M1 11 inch WiFi Cellular 2TB (2021).jpg",
         price: '50.990.000',
         tag: ['ipad', 'apple'],
+        Screen: "OLED,6.1'',Super Retina XDR",
+        OS: "iOS 17",
+        RearCamera: "Chính 48 MP & Phụ 12 MP",
+        FrontCamera: "12MP",
+        Chip: "Apple A16 Bionic",
+        RAM: "6GB",
+        StorageCapacity: "256 GB",
+        SIM: "1 Nano SIM & 1 eSIM,Hỗ trợ 5G",
+        BatterPhoneCharger: "3349 mAh, 20W"
     },
 
     {
@@ -118,6 +262,15 @@ const products =[
         img: "img/samsung/samsung m34-5g.jpg",
         price: '7.690.000',
         tag: ['samsung-galaxy', 'samsung'],
+        Screen: "OLED,6.1'',Super Retina XDR",
+        OS: "iOS 17",
+        RearCamera: "Chính 48 MP & Phụ 12 MP",
+        FrontCamera: "12MP",
+        Chip: "Apple A16 Bionic",
+        RAM: "6GB",
+        StorageCapacity: "256 GB",
+        SIM: "1 Nano SIM & 1 eSIM,Hỗ trợ 5G",
+        BatterPhoneCharger: "3349 mAh, 20W"
     },
     {
         id: 18,
@@ -125,6 +278,15 @@ const products =[
         img: "img/samsung/Samsung Galaxy Z Flip5 5G 256GB.jpg",
         price: '21.990.000',
         tag: ['samsung-galaxy', 'samsung'],
+        Screen: "OLED,6.1'',Super Retina XDR",
+        OS: "iOS 17",
+        RearCamera: "Chính 48 MP & Phụ 12 MP",
+        FrontCamera: "12MP",
+        Chip: "Apple A16 Bionic",
+        RAM: "6GB",
+        StorageCapacity: "256 GB",
+        SIM: "1 Nano SIM & 1 eSIM,Hỗ trợ 5G",
+        BatterPhoneCharger: "3349 mAh, 20W"
     },
     {
         id: 19,
@@ -132,6 +294,15 @@ const products =[
         img: "img/samsung/Samsung Galaxy Z Flip5 5G 512GB.jpg",
         price: '25.990.000',
         tag: ['samsung-galaxy', 'samsung'],
+        Screen: "OLED,6.1'',Super Retina XDR",
+        OS: "iOS 17",
+        RearCamera: "Chính 48 MP & Phụ 12 MP",
+        FrontCamera: "12MP",
+        Chip: "Apple A16 Bionic",
+        RAM: "6GB",
+        StorageCapacity: "256 GB",
+        SIM: "1 Nano SIM & 1 eSIM,Hỗ trợ 5G",
+        BatterPhoneCharger: "3349 mAh, 20W"
     },
     {
         id: 20,
@@ -139,6 +310,15 @@ const products =[
         img: "img/samsung/Samsung Galaxy Z Fold5 5G 256GB.jpg",
         price: '36.990.000',
         tag: ['samsung-galaxy', 'samsung'],
+        Screen: "OLED,6.1'',Super Retina XDR",
+        OS: "iOS 17",
+        RearCamera: "Chính 48 MP & Phụ 12 MP",
+        FrontCamera: "12MP",
+        Chip: "Apple A16 Bionic",
+        RAM: "6GB",
+        StorageCapacity: "256 GB",
+        SIM: "1 Nano SIM & 1 eSIM,Hỗ trợ 5G",
+        BatterPhoneCharger: "3349 mAh, 20W"
     },
     {
         id: 21,
@@ -146,6 +326,15 @@ const products =[
         img: "img/samsung/Samsung Galaxy Z Fold5 5G 512GB.jpg",
         price: '40.990.000',
         tag: ['samsung-galaxy', 'samsung'],
+        Screen: "OLED,6.1'',Super Retina XDR",
+        OS: "iOS 17",
+        RearCamera: "Chính 48 MP & Phụ 12 MP",
+        FrontCamera: "12MP",
+        Chip: "Apple A16 Bionic",
+        RAM: "6GB",
+        StorageCapacity: "256 GB",
+        SIM: "1 Nano SIM & 1 eSIM,Hỗ trợ 5G",
+        BatterPhoneCharger: "3349 mAh, 20W"
     },
     {
         id: 22,
@@ -153,6 +342,15 @@ const products =[
         img: "img/samsung/Samsung Galaxy Tab A8 (2022).jpg",
         price: '5.390.000',
         tag: ['ipad', 'samsung'],
+        Screen: "OLED,6.1'',Super Retina XDR",
+        OS: "iOS 17",
+        RearCamera: "Chính 48 MP & Phụ 12 MP",
+        FrontCamera: "12MP",
+        Chip: "Apple A16 Bionic",
+        RAM: "6GB",
+        StorageCapacity: "256 GB",
+        SIM: "1 Nano SIM & 1 eSIM,Hỗ trợ 5G",
+        BatterPhoneCharger: "3349 mAh, 20W"
     },
     {
         id: 23,
@@ -160,6 +358,15 @@ const products =[
         img: "img/samsung/Samsung Galaxy Tab S9 Ultra 5G.jpg",
         price: '3.390.000',
         tag: ['ipad', 'samsung'],
+        Screen: "OLED,6.1'',Super Retina XDR",
+        OS: "iOS 17",
+        RearCamera: "Chính 48 MP & Phụ 12 MP",
+        FrontCamera: "12MP",
+        Chip: "Apple A16 Bionic",
+        RAM: "6GB",
+        StorageCapacity: "256 GB",
+        SIM: "1 Nano SIM & 1 eSIM,Hỗ trợ 5G",
+        BatterPhoneCharger: "3349 mAh, 20W"
     },
     {
         id: 24,
@@ -167,6 +374,15 @@ const products =[
         img: "img/samsung/Samsung Galaxy Z Fold5 5G 256GB.jpg",
         price: '25.990.000',
         tag: ['ipad', 'samsung'],
+        Screen: "OLED,6.1'',Super Retina XDR",
+        OS: "iOS 17",
+        RearCamera: "Chính 48 MP & Phụ 12 MP",
+        FrontCamera: "12MP",
+        Chip: "Apple A16 Bionic",
+        RAM: "6GB",
+        StorageCapacity: "256 GB",
+        SIM: "1 Nano SIM & 1 eSIM,Hỗ trợ 5G",
+        BatterPhoneCharger: "3349 mAh, 20W"
     },
 ];
 
@@ -188,6 +404,69 @@ function renderProduct(){
     });
     document.getElementById('product-items').innerHTML = data
 }
+
+/*-------Hiển thị chi tiết sản phẩm------------*/
+function redirectToDetail(productId) {
+    localStorage.setItem('productId', productId);
+    window.location.href = 'detail.html';
+
+}
+var productId = localStorage.getItem('productId');
+var product = products.find(value => value.id === parseInt(productId));  //đổi giá trị của biến productId từ kiểu dữ liệu chuỗi (string) sang kiểu dữ liệu số nguyên 
+
+if (product) {
+    document.getElementById('product-items').innerHTML = `
+        <div class="product-item" style ="cursor: pointer" >
+        <img src="${product.img}" alt="">
+        <div class="product-item-text">
+        <h1>${product.name}</h1>
+        <p><span>${product.price}</span><sup>đ</sup></p>
+        </div>
+        <button onclick='addToCart(${product.id})' class ="btn btn-primary" >Thêm vào giỏ hàng</button>
+        </div>
+        <div class="product-detail">
+        <h1 style="text-align: center;">Thông Tin Sản Phẩm</h1>
+        <div class="producInfo">
+            <b>Screen:</b>
+            <span>${product.Screen}</span>
+        </div>
+        <div class="producInfo">
+            <b>OS:</b>
+            <span>${product.OS}</span>
+        </div>
+        <div class="producInfo">
+            <b>RearCamera:</b>
+            <span>${product.RearCamera}</span>
+        </div>
+        <div class="producInfo">
+            <b>FrontCamera:</b>
+            <span>${product.FrontCamera}</span>
+        </div>
+        <div class="producInfo"> 
+            <b>Chip:</b>
+            <span>${product.Chip}</span>
+        </div>
+        <div class="producInfo">
+            <b>RAM:</b>
+            <span>${product.RAM}</span>
+        </div>
+        <div class="producInfo">
+            <b>StorageCapacity:</b>
+            <span>${product.StorageCapacity}</span>
+        </div>
+        <div class="producInfo">
+            <b>SIM:</b>
+            <span>${product.SIM}</span>
+        </div>
+        <div class="producInfo">
+            <b>BatterPhoneCharger:</b>
+            <span>${product.BatterPhoneCharger}</span>
+        </div>
+    </div>
+    `;
+}
+
+
 
 /*
 function searchProducts() {
@@ -218,7 +497,7 @@ function renderProductApple(){
     var select = products.filter(value => value.tag.includes('apple')); // lọc ra sản phẩm apple
     select.map(value =>{
         data += `
-        <div class="product-item">
+        <div class="product-item" onclick="redirectToDetail(${value.id})">
                     <img src="${value.img}" alt="">
                     <div class="product-item-text">
                         <h1>${value.name}</h1>
@@ -237,7 +516,7 @@ function renderProductSamsung(){
     var select = products.filter(value => value.tag.includes('samsung')); // lọc ra sản phẩm samsung
     select.map(value =>{
         data += `
-        <div class="product-item">
+        <div class="product-item" onclick="redirectToDetail(${value.id})">
                     <img src="${value.img}" alt="">
                     <div class="product-item-text">
                         <h1>${value.name}</h1>
@@ -256,7 +535,7 @@ function renderProductPhone(){
     var select = products.filter(value => value.tag.includes('apple') || value.tag.includes('samsung-galaxy') ); // lọc ra sản phẩm điện thoại
     select.map(value =>{
         data += `
-        <div class="product-item">
+        <div class="product-item" onclick="redirectToDetail(${value.id})">
                     <img src="${value.img}" alt="">
                     <div class="product-item-text">
                         <h1>${value.name}</h1>
@@ -275,7 +554,7 @@ function renderProductTablet(){
     var select = products.filter(value => value.tag.includes('ipad')); // lọc ra sản phẩm tablet
     select.map(value =>{
         data += `
-        <div class="product-item">
+        <div class="product-item" onclick="redirectToDetail(${value.id})">
                     <img src="${value.img}" alt="">
                     <div class="product-item-text">
                         <h1>${value.name}</h1>
@@ -409,7 +688,8 @@ function totalPrice(){
             total += productInCart[i].quantity * parseFloat(productInCart[i].price.replace(/[.]/g, '')); // Sửa thành parseFloat để chuyển đổi chuỗi thành số thực
           }
           document.getElementById("totalMoney").innerHTML = total.toLocaleString('vi-VN'); // Không cần replace và loại bỏ số 0 ở đầu
-        }
+        }   
+        
 }
 
 function cartLoadPage(){

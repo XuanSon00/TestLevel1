@@ -52,7 +52,7 @@ function confirm(){
             Swal.fire({
                 icon: 'Error',
                 title: 'Lỗi',
-                text: 'Tài khoản hoặc Mật khẩu chưa chính xác!',
+                text: 'Tài khoản hoặc Mật khẩu chưa nhập hoặc không chính xác!',
                 
               })
         }
