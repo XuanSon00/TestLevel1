@@ -8,7 +8,6 @@ body{
     
 
 .form{
-    text-align: center;
     padding :50px;
     background-color: rgb(238, 234, 234);
     font-family:Georgia, 'Times New Roman', Times, serif ;
@@ -18,7 +17,7 @@ body{
 }
 
 .form input{
-    max-width: 100%;
+    max-width: 80%;
     height: 25px;
     border-radius: 5px;
     border-color: green;
@@ -29,6 +28,17 @@ body{
     
 }
 
+.text_box{
+    border: 1px black solid;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: aliceblue;
+    font-weight: 800;
+    width: 50%;
+    margin: 10px auto;
+}
 .confirm{
     background-color: aqua;
     color: rgb(44, 5, 5);
@@ -59,7 +69,13 @@ body{
     color:  red;
 }
 
+#checkbox1, #checkbox2{
+    color: aqua;
+}
 
+.inputValue{
+    width: 100%;
+}
 /*----footer-----*/
 a{
     text-decoration: none; 
@@ -72,7 +88,78 @@ a{
 /*  */
 @media only screen and (max-width: 390px) {
     .form {
+      width: 100%;
+      padding: 30px;
+    }
+  
+    .text_box{
+        width: 100%;
+    }
+
+    .form input {
+      width: 100%;
+    }
+  
+    .confirm {
+      width: 100%;
+      padding: 15px;
+    }
+
+    .gender{
+        display: flex;
+    }
+   
+    
+    .pass, .confirm-pass {
+        display: flex;
+    }
+
+ 
+    .footer{
+        height: 200px;
+
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .form {
       width: 90%;
+      padding: 30px;
+    }
+  
+    .text_box{
+        width: 100%;
+    }
+    
+    .form input {
+      width: 100%;
+    }
+  
+    .confirm {
+      width: 100%;
+      padding: 15px;
+    }
+
+    .gender{
+        display: flex;
+    }
+   
+    
+    .pass, .confirm-pass {
+        display: flex;
+    }
+
+ 
+    .footer{
+        height: 200px;
+
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    .form {
+    
+      width: 50%;
       padding: 30px;
     }
   

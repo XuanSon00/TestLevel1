@@ -77,22 +77,25 @@ a{
 /**************Responsive*********************/
 @media only screen and (max-width: 390px) {
     .form {
-      padding: 16px;
-      width: 50%;
+      width: 80%;
+      margin: 10px auto;
+      padding: 20px;
+
     }
   
-    .form span {
-      margin-right: 5px;
-      font-size: 12px;
+    .textbox {
+      width: 70%;
+      position: relative;
+    
     }
   
-    .form input {
-      height: 28px;
-      font-size: 12px;
+    .button {
+      width: 100%;
     }
-  
-    .confirm {
-      padding: 12px;
-      font-size: 12px;
+
+    .footer{
+      
+        height: 300px;
     }
-  }
+
+}

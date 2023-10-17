@@ -16,20 +16,30 @@ body{
 }
 
 
+.user{
+    position: relative;
+
+}
+
 .textbox{
-    margin: 10px auto ;
-    width: 30vh;
+    margin: 10px 50px;
+    width: 70%;
     height: 30px;
     border-radius: 5px;
 }
 
-.button{
+
+#button{
     width: 50%;
     height: 30px;
     background-color: aquamarine;
+    ;
     
 }
-.button:hover{
+
+
+
+#button:hover{
     color: red;
 }
 
@@ -41,6 +51,8 @@ body{
     display: flex;
     background-color: aliceblue;
     font-weight: 800;
+    width: 50%;
+    margin: 10px auto;
 }
 
 /*----footer-----*/
@@ -52,16 +64,19 @@ a{
 
 @media only screen and (max-width: 390px) {
     .form {
-      width: 90%;
+      width: 80%;
       margin: 10px auto;
       padding: 20px;
+
     }
   
     .textbox {
-      width: 100%;
+      width: 70%;
+      position: relative;
+    
     }
   
-    .button {
+    #button {
       width: 100%;
     }
 
@@ -70,4 +85,72 @@ a{
         height: 300px;
     }
 
+}
+
+@media only screen and (max-width: 412px) {
+    .form {
+      width: 80%;
+      margin: 10px auto;
+      padding: 20px;
+
+    }
+  
+    .textbox {
+      width: 70%;
+      position: relative;
+    
+    }
+  
+    #button {
+      width: 100%;
+    }
+
+    .footer{
+      
+        height: 300px;
+    }
+
+}
+
+@media only screen and (max-width: 912px) {
+    .form {
+    
+      width: 50%;
+      margin: auto auto;
+      padding: 20px;
+
+    }
+  
+    .textbox {
+      width: 70%;
+      position: relative;
+    
+    }
+  
+    #button {
+      width: 100%;
+    }
+
+  
+}
+@media only screen and (max-width: 280px) {
+    .form {
+    
+      width: 100%;
+      margin: auto auto;
+      padding: 20px;
+
+    }
+  
+    .textbox {
+      width: 70%;
+      position: relative;
+    
+    }
+  
+    #button {
+      width: 100%;
+    }
+
+  
 }
