@@ -17,7 +17,7 @@
      <section>
         <nav class="navbar navbar-expand-lg navbar-light bg-dark">
           <div class="container-fluid">
-            <a class="navbar-brand  text-white" href=""><i style="font-size: 50px;" class='bx bxl-apple'></i></a>
+            <a class="navbar-brand  text-white" href="index.html"><i style="font-size: 50px;" class='bx bxl-apple'></i></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -49,7 +49,7 @@
                 </li>
   
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="LogIn.html">LogIn</a>
+                  <a class="nav-link text-white" href="LogIn.html">Đăng nhập</a>
                 </li>
   
               
@@ -65,24 +65,25 @@
     </section>
 
         <!-- body -->
-      <div class="wrapper">
-        <div style="margin-top: 20px;" class="form ">
-        <div>
+      <div class="wrapper" style="min-height: 880px;">
+        <div style="margin-top: 50px;" class="form ">
+          <h5 class="text_box">Đăng Ký</h5>
+        <div class="Info">
             <span>Họ và Tên:</span><br>
-            <input type="text" id="name" value=""><br>
+            <input type="text" id="name" value="" class="inputValue"><br>
             <span class="error" id="nameError">Vui lòng không bỏ trống</span>
             <span class="error" id="nameErrorLength">Vui lòng điền từ 5 ký tự trở lên</span>
         </div>
-        <div>
+        <div class="Info">
             <span>Email:</span><br>
-            <input type="text" id="email">
+            <input type="text" id="email" class="inputValue">
             <span class="error" id="emailError">Vui lòng không bỏ trống</span>
             <span class="error" id="emailErrorCheck">Địa chỉ email bao gồm ít nhất  ký tự "@" và ".com"</span>
     
         </div>
-        <div>
+        <div class="Info"> 
             <span>Điện thoại:</span><br>
-            <input type="number" id="phone">
+            <input type="number" id="phone" class="inputValue">
             <span class="error" id="phoneError">Vui lòng không bỏ trống</span>
             <span class="error" id="phoneErrorLength">Số điện thoại tối đa 11 số</span>
     
@@ -95,16 +96,16 @@
             <input type="radio" name="Gender" id="female" value="Female">
             <span class="error" id="genderError">Vui lòng Chọn 1 trong 2 giới tính</span>
         </div>
-        <div>
+        <div class="Info">
             <span>Tên người dùng:</span><br>
-            <input type="text" id="user">
+            <input type="text" id="user" class="inputValue">
             <span class="error" id="userError">Vui lòng không bỏ trống</span>
             <span class="error" id="userErrorLength">Vui lòng điền từ 6 ký tự trở lên</span>
         </div>
-        <div>
+        <div class="Info">
             <span>Mật khẩu:</span><br>
-            <div class="pass">
-            <input type="password" id="password" style="margin-left: 30px;">
+            <div class="pass" >
+            <input type="password" id="password" class="inputValue">
             <i class='bx bx-show'><input type="checkbox" onclick="ShowPassword()" id="checkbox1" ></i>
             </div>
             <span class="error" id="passwordError">Vui lòng không bỏ trống</span>
@@ -112,10 +113,10 @@
             <span class="error" id="passwordCheck">Mật khẩu cần có độ dài 8 ký tự, ít nhất 1 ký tự thường, 1 ký tự hoa, 1 ký tự đặc biệt trong dãy (@#$&) và 1 ký tự số</span>
     
         </div>
-        <div >
+        <div class="Info" >
             <span>Xác nhận mật khẩu:</span><br>
             <div class="confirm-pass">
-            <input type="password" id="confirmPassword" style="margin-left: 30px;">
+            <input type="password" id="confirmPassword" class="inputValue">
             <i class='bx bx-show'><input type="checkbox" onclick="ShowConfirmPassword()" id="checkbox2" ></i>
             </div>
             <span class="error" id="confirmError">Vui lòng không bỏ trống</span>

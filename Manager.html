@@ -58,7 +58,7 @@
                 </li>
   
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="index.html">LogOut</a>
+                    <a class="nav-link text-white" href="index.html">Đăng Xuất</a>
                   </li>
   
                
@@ -74,11 +74,11 @@
       </section>
   
       <!-- body -->
-    <div class="container">
+    <div class="wrapper">
         <span>Quản lý người dùng</span>
         <div class="manage">
-            <input type="search">
-            <button onclick="searchByName()">Tìm kiếm</button>
+            <input type="search" style="width: 50%;">
+            <button onclick="searchByName()" id="search">Tìm kiếm</button>
             <button onclick ="deleteAll()" id="deleteAll" >Xóa tất cả</button>
         </div>
         <div id="table">
@@ -113,7 +113,7 @@
     
 
     <!--footer-->
-  <section>
+  
     <section class="footer">
         <nav class="footer bg-dark fixed-bottom" >
             <div class="container">

@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=., initial-scale=1.0">
-    <title>Phone</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apple</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>  <!--Icon-->
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <script src="sweetalert2.all.min.js"></script>  <!--Thông báo hộp thoại -->
-    <script src="js/sweetalert2.js"></script>       <!--sweetalert2-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script><!--SweetAlert2-->
     <link rel="stylesheet" href="css/bootstrap.css">  <!--Bootstrap-->
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery.js"></script> <!--jquery-->
-    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/detail.css">
 </head>
-<body onload = 'renderProductPhone(productTotal())'>
+<body onload = 'cartLoadPage() '>
     <!--header-->
     <section>
       <nav class="navbar navbar-expand-lg navbar-light bg-dark">
@@ -97,17 +96,55 @@
     <div class="product">
       <div class="product-box">
           <div id="product-items">
-              <!--<div class="product-item">
+            <!--
+              <div class="product-item">
                   <img src="img/iphone 11.jpg" alt="">
                   <div class="product-item-text">
                       <h1>Iphone 11</h1>
                       <p><span>10.690.000</span><sup>đ</sup></p>
                   </div>
                   <button>Thêm vào giỏ hàng</button>
-              </div>-->
-
-
+              </div>
               
+              <div class="product-detail">
+                <h1 style="text-align: center;">Thông Tin Sản Phẩm</h1>
+                <div class="producInfo">
+                    <b>Screen:</b>
+                    <span>"OLED,6.1'',Super Retina XDR"</span>
+                </div>
+                <div class="producInfo">
+                    <b>OS:</b>
+                    <span>"iOS 17"</span>
+                </div>
+                <div class="producInfo">
+                    <b>RearCamera:</b>
+                    <span>"Chính 48 MP & Phụ 12 MP"</span>
+                </div>
+                <div class="producInfo">
+                    <b>FrontCamera:</b>
+                    <span>"12MP"</span>
+                </div>
+                <div class="producInfo"> 
+                    <b>Chip:</b>
+                    <span>"Apple A16 Bionic"</span>
+                </div>
+                <div class="producInfo">
+                    <b>RAM:</b>
+                    <span>"6GB"</span>
+                </div>
+                <div class="producInfo">
+                    <b>StorageCapacity:</b>
+                    <span>"256GB"</span>
+                </div>
+                <div class="producInfo">
+                    <b>SIM:</b>
+                    <span>"1 Nano SIM & 1 eSIM,Hỗ trợ 5G"</span>
+                </div>
+                <div class="producInfo">
+                    <b>BatterPhoneCharger:</b>
+                    <span>"3349 mAh, 20W"</span>
+                </div>
+            </div>-->
           </div>
       </div>
   </div>
@@ -160,7 +197,7 @@
     </div>       
   </nav>
   </section>
-
   <script src="js/Product.js"></script>
+
 </body>
 </html>
