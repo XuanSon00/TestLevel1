@@ -467,8 +467,8 @@ if (product) {
     </div>
     `;
 }
-*/
 
+*/
 
 /*
 function searchProducts() {
