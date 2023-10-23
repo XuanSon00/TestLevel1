@@ -94,8 +94,9 @@
             <input type="radio" name="Gender" id="male" value="Male">
             <span>Nữ</span>
             <input type="radio" name="Gender" id="female" value="Female">
-            <span class="error" id="genderError">Vui lòng Chọn 1 trong 2 giới tính</span>
+            
         </div>
+        <div><span class="error" id="genderError">Vui lòng Chọn 1 trong 2 giới tính</span></div>
         <div class="Info">
             <span>Tên người dùng:</span><br>
             <input type="text" id="user" class="inputValue">
@@ -106,22 +107,21 @@
             <span>Mật khẩu:</span><br>
             <div class="pass" >
             <input type="password" id="password" class="inputValue">
-            <i class='bx bx-show'><input type="checkbox" onclick="ShowPassword()" id="checkbox1" ></i>
+            <i class='bx bx-show' onclick="ShowPassword()" style="cursor: pointer;"><input type="checkbox"  id="checkbox1" style="display: none;"></i>
             </div>
             <span class="error" id="passwordError">Vui lòng không bỏ trống</span>
             <span class="error" id="passwordErrorLength">Vui lòng điền từ 8 ký tự trở lên</span>
             <span class="error" id="passwordCheck">Mật khẩu cần có độ dài 8 ký tự, ít nhất 1 ký tự thường, 1 ký tự hoa, 1 ký tự đặc biệt trong dãy (@#$&) và 1 ký tự số</span>
-    
         </div>
         <div class="Info" >
             <span>Xác nhận mật khẩu:</span><br>
             <div class="confirm-pass">
             <input type="password" id="confirmPassword" class="inputValue">
-            <i class='bx bx-show'><input type="checkbox" onclick="ShowConfirmPassword()" id="checkbox2" ></i>
+            <i class="bx bx-show" onclick="ShowConfirmPassword()" style="cursor: pointer;"></i><input type="checkbox" id="checkbox2" style="display: none;">
             </div>
             <span class="error" id="confirmError">Vui lòng không bỏ trống</span>
             <span class="error" id="confirmErrorCheck">Vui lòng nhập chính xác với mật khẩu</span>
-        </div>
+        
         <div>
             <button type="submit" onclick="check(event)" class="confirm">Đăng kí</button>
             <span class="error" id="checkForm">vui lòng không bỏ trống và nhập đầy đủ thông tin</span>
@@ -130,53 +130,53 @@
         </div>
         <!--Thông báo đăng ký thành công-->
         <div class="success" id="success"></div>
+        </div>
           <!--footer-->
-  <section class="footer">
-    <nav class="footer bg-dark fixed-bottom" >
-      <div class="container">
-      <div class="row justify-content-center align-items-center">
-          <div class="col-sm-3 text-white">
-              <h5>Contact Info</h5>
-              <ul>
-                  <li ><i class='bx bx-map'></i> Ho Chi Minh City</li>
-                  <li><i class='bx bx-phone' ></i> +84 90x xxx</li>
-                  <li><i class='bx bx-envelope' ></i> abcd@gmail.com</li>
-              </ul>
-          </div>
-          <div class="col-sm-3 text-white">
-              <h5>Quick Links</h5>
-              <ul class="text-white">
-                 <a href="index.html"><li>> Home</li></a>
-                  <a href="#"><li>> About</li></a>
-                  <a href="#"><li>> Mobiles</li></a>
-                  <a href="#"><li>> Blog</li></a>
-                  <a href="#"><li>> Contact</li></a>
-              </ul>
-          </div>
-          <div class="col-sm-3 text-white">
-              <h5>Policy Info</h5>
-              <ul class="text-white">
-                   <a href="index.html"><li>> Payments</li></a>
-                   <a href="#"><li>> Cancellation & Return</li></a>
-                   <a href="#"><li>> Shipping & Delivery</li></a>
-                   <a href="#"><li>> Privacy & Policy</li></a>
-                   <a href="#"><li>> T & C</li></a>
-               </ul>
-          </div>
-          <div class="col-sm-3 text-white">
-              <h5>Connect With Us</h5>
-              <div style="padding-left: 10px; margin:50px;">
-                  <a href="#"><i class='bx bxl-facebook-circle icon' style="background-color: #3b5998;border: 2px solid black;border-radius: 50%;color: white;padding: 5px;text-decoration: none; color: inherit;" undefined ></i></a>
-                  <a href="#"><i class='bx bxl-twitter icon' style="background-color: #00acee;border: 2px solid black;border-radius: 50%;color: white;padding: 5px;text-decoration: none; color: inherit;"></i></a>
-                  <a href="#"><i class='bx bxl-google icon' style="background-color:  #c71610	;border: 2px solid black;border-radius: 50%;color: white;padding: 5px;text-decoration: none; color: inherit;" ></i></a>
-                  <a href="#"><i class='bx bxl-instagram icon' style="background: linear-gradient(to top, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);border: 2px solid black;border-radius: 50%;color: white;padding: 5px;text-decoration: none; color: inherit;" ></i></a>
-              </div>
-          </div>
-      </div> 
-    </div>       
-  </nav>
-  </section>
-
+          <section>
+            <nav class="footer bg-dark " >
+              <div class="container">
+              <div class="row justify-content-center align-items-center">
+                  <div class="col-sm-3 text-white">
+                      <h5>Thông tin liên hệ</h5>
+                      <ul>
+                          <li ><i class='bx bx-map'></i> Ho Chi Minh City</li>
+                          <li><i class='bx bx-phone' ></i> +84 90x xxx</li>
+                          <li><i class='bx bx-envelope' ></i> abcd@gmail.com</li>
+                      </ul>
+                  </div>
+                  <div class="col-sm-3 text-white">
+                      <h5>Liên kết nhanh</h5>
+                      <ul class="text-white">
+                         <a href="index.html"><li>> Trang chủ</li></a>
+                          <a href="#"><li>> Giới thiệu</li></a>
+                          <a href="#"><li>> Sản phẩm</li></a>
+                          <a href="#"><li>> Blog</li></a>
+                          <a href="#"><li>> Liên hệ</li></a>
+                      </ul>
+                  </div>
+                  <div class="col-sm-3 text-white">
+                      <h5>Thông tin chính sách</h5>
+                      <ul class="text-white">
+                           <a href="index.html"><li>> Thanh toán</li></a>
+                           <a href="#"><li>> Hình thức Đổi trả</li></a>
+                           <a href="#"><li>> Vận chuyển & Delivery</li></a>
+                           <a href="#"><li>> Chính sách</li></a>
+                           <a href="#"><li>> Điều khoản và Điều kiện</li></a>
+                       </ul>
+                  </div>
+                  <div class="col-sm-3 text-white">
+                      <h5>Liên hệ với chúng tôi</h5>
+                      <div style="padding-left: 10px; margin:50px;">
+                          <a href="#"><i class='bx bxl-facebook-circle icon' style="background-color: #3b5998;border: 2px solid black;border-radius: 50%;color: white;padding: 5px;text-decoration: none; color: inherit;" undefined ></i></a>
+                          <a href="#"><i class='bx bxl-twitter icon' style="background-color: #00acee;border: 2px solid black;border-radius: 50%;color: white;padding: 5px;text-decoration: none; color: inherit;"></i></a>
+                          <a href="#"><i class='bx bxl-google icon' style="background-color:  #c71610	;border: 2px solid black;border-radius: 50%;color: white;padding: 5px;text-decoration: none; color: inherit;" ></i></a>
+                          <a href="#"><i class='bx bxl-instagram icon' style="background: linear-gradient(to top, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);border: 2px solid black;border-radius: 50%;color: white;padding: 5px;text-decoration: none; color: inherit;" ></i></a>
+                      </div>
+                  </div>
+              </div> 
+            </div>       
+          </nav>
+          </section>
   <script src="js/SignIn.js"></script>
 </body>
 </html>

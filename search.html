@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=., initial-scale=1.0">
-    <title>Phone</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apple</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>  <!--Icon-->
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <script src="sweetalert2.all.min.js"></script>  <!--Thông báo hộp thoại -->
-    <script src="js/sweetalert2.js"></script>       <!--sweetalert2-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script><!--SweetAlert2-->
     <link rel="stylesheet" href="css/bootstrap.css">  <!--Bootstrap-->
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery.js"></script> <!--jquery-->
     <link rel="stylesheet" href="css/product.css">
 </head>
-<body onload = 'renderProductPhone(productTotal())'>
+<body onload = 'renderSearchResults(searchTerm)'>
     <!--header-->
     <section>
       <nav class="navbar navbar-expand-lg navbar-light bg-dark">
@@ -79,17 +78,17 @@
         <img class="w-100" src="https://www.macgasm.net/wp-content/uploads/2023/09/iphone-15-release.jpg" alt="banner">
         </div>
         <div class="container">
-          <div class="row justify-content-center">
-            <div class="w-30 col-3 col-md-3 mt-3 ">
-                <img class="img-fluid" src="https://www.optus.com.au/content/dam/optus/images/for-you/connected/tech/galaxy-z-flip4-what-you-need-to-know-article-banner.jpg/renditions/version-1660121916183/original.jpeg" alt="">
+            <div class="row justify-content-center">
+                <div class="w-30 col-3 col-md-3 mt-3 ">
+                    <img class="img-fluid" src="https://www.optus.com.au/content/dam/optus/images/for-you/connected/tech/galaxy-z-flip4-what-you-need-to-know-article-banner.jpg/renditions/version-1660121916183/original.jpeg" alt="">
+                </div>
+                <div  class="w-30 col-3 col-md-3 mt-3 ">
+                    <img class="img-fluid" src="https://genz.com.vn/wp-content/uploads/2023/09/iphone-15-pro-max-iphone-15-pro-mo-ban-29-9-thumbnail.jpg" alt="">
+                </div>
+                <div class="w-30 col-3 col-md-3 mt-3 ">
+                    <img class="img-fluid" src="https://img.etimg.com/photo/msid-82168208,imgsize-86772/%E2%80%8BiPadPros.jpg" alt="">
+                </div>
             </div>
-            <div  class="w-30 col-3 col-md-3 mt-3 ">
-                <img class="img-fluid" src="https://genz.com.vn/wp-content/uploads/2023/09/iphone-15-pro-max-iphone-15-pro-mo-ban-29-9-thumbnail.jpg" alt="">
-            </div>
-            <div class="w-30 col-3 col-md-3 mt-3 ">
-                <img class="img-fluid" src="https://img.etimg.com/photo/msid-82168208,imgsize-86772/%E2%80%8BiPadPros.jpg" alt="">
-            </div>
-        </div>
         </div>
         <br>
     <h2 class="text-center mt-3">Sản Phẩm</h2>
@@ -105,9 +104,6 @@
                   </div>
                   <button>Thêm vào giỏ hàng</button>
               </div>-->
-
-
-              
           </div>
       </div>
   </div>
@@ -162,5 +158,6 @@
   </section>
   <script src="js/Product.js"></script>
   <script src="js/detail.js"></script>
+
 </body>
 </html>

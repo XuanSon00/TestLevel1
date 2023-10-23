@@ -6,11 +6,11 @@
     <title>Quản Lý</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>  <!--Icon-->
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-   <!-- <script src="sweetalert2.all.min.js"></script>  Thông báo hộp thoại 
-    <script src="js/sweetalert2.js"></script>       sweetalert2-->
     <link rel="stylesheet" href="css/bootstrap.css">  <!--Bootstrap-->
     <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/jquery-ui.css"><!--jquery UI-->
     <script src="js/jquery.js"></script> <!--jquery-->
+    <script src="js/jquery-ui.js"></script> <!--jquery UI-->
     <link rel="stylesheet" href="css/manageProduct.css">
 </head>
 <body onload="productTotal()">
@@ -76,7 +76,8 @@
     <div class="containerProduct">
         <span>Quản lý Sản Phẩm</span>
         <div class="manage">
-            <input type="search">
+            <input type="search" id="search" style="width: 500px;">
+            <button onclick="searchByName()" >Tìm kiếm</button>
             <button><a href="createProduct.html">Tạo mới</a></button>
             <button onclick ="deleteAll()" id="deleteAll">Xóa tất cả</button>
         </div>
@@ -111,57 +112,73 @@
             </form>
         </div>
     </div>
+    <div id="editProduct" title="Sửa sản phẩm" >
+      <form>
+        <label for="productName">Tên sản phẩm:</label>
+        <input type="text" id="productName">
+    
+        <label for="productPrice">Giá:</label>
+        <input type="text" id="productPrice">
+    
+        <label for="productProducer">Nhà sản xuất:</label>
+        <input type="text" id="productProducer">
+    
+        <label for="productNumber">Số lượng:</label>
+        <input type="text" id="productNumber">
+    
+        <label for="productDescribe">Chi tiết sản phẩm:</label>
+        <textarea id="productDescribe"></textarea>
+      </form>
+    </div>
     
 
     <!--footer-->
-  <section>
-    <section class="footer">
-        <nav class="footer bg-dark fixed-bottom" >
-            <div class="container">
-            <div class="row justify-content-center align-items-center bg-dark">
-                <div class="col-sm-3 text-white">
-                    <h5>Contact Info</h5>
-                    <ul>
-                        <li ><i class='bx bx-map'></i> Ho Chi Minh City</li>
-                        <li><i class='bx bx-phone' ></i> +84 90x xxx</li>
-                        <li><i class='bx bx-envelope' ></i> abcd@gmail.com</li>
-                      </ul>
+    <section>
+      <nav class="footer bg-dark " >
+        <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-sm-3 text-white">
+                <h5>Thông tin liên hệ</h5>
+                <ul>
+                    <li ><i class='bx bx-map'></i> Ho Chi Minh City</li>
+                    <li><i class='bx bx-phone' ></i> +84 90x xxx</li>
+                    <li><i class='bx bx-envelope' ></i> abcd@gmail.com</li>
+                </ul>
+            </div>
+            <div class="col-sm-3 text-white">
+                <h5>Liên kết nhanh</h5>
+                <ul class="text-white">
+                   <a href="index.html"><li>> Trang chủ</li></a>
+                    <a href="#"><li>> Giới thiệu</li></a>
+                    <a href="#"><li>> Sản phẩm</li></a>
+                    <a href="#"><li>> Blog</li></a>
+                    <a href="#"><li>> Liên hệ</li></a>
+                </ul>
+            </div>
+            <div class="col-sm-3 text-white">
+                <h5>Thông tin chính sách</h5>
+                <ul class="text-white">
+                     <a href="index.html"><li>> Thanh toán</li></a>
+                     <a href="#"><li>> Hình thức Đổi trả</li></a>
+                     <a href="#"><li>> Vận chuyển & Delivery</li></a>
+                     <a href="#"><li>> Chính sách</li></a>
+                     <a href="#"><li>> Điều khoản và Điều kiện</li></a>
+                 </ul>
+            </div>
+            <div class="col-sm-3 text-white">
+                <h5>Liên hệ với chúng tôi</h5>
+                <div style="padding-left: 10px; margin:50px;">
+                    <a href="#"><i class='bx bxl-facebook-circle icon' style="background-color: #3b5998;border: 2px solid black;border-radius: 50%;color: white;padding: 5px;text-decoration: none; color: inherit;" undefined ></i></a>
+                    <a href="#"><i class='bx bxl-twitter icon' style="background-color: #00acee;border: 2px solid black;border-radius: 50%;color: white;padding: 5px;text-decoration: none; color: inherit;"></i></a>
+                    <a href="#"><i class='bx bxl-google icon' style="background-color:  #c71610	;border: 2px solid black;border-radius: 50%;color: white;padding: 5px;text-decoration: none; color: inherit;" ></i></a>
+                    <a href="#"><i class='bx bxl-instagram icon' style="background: linear-gradient(to top, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);border: 2px solid black;border-radius: 50%;color: white;padding: 5px;text-decoration: none; color: inherit;" ></i></a>
                 </div>
-                <div class="col-sm-3 text-white">
-                    <h5>Quick Links</h5>
-                    <ul class="text-white">
-                        <a href="index.html"><li>> Home</li></a>
-                        <a href="#"><li>> About</li></a>
-                        <a href="#"><li>> Mobiles</li></a>
-                        <a href="#"><li>> Blog</li></a>
-                        <a href="#"><li>> Contact</li></a>
-                    </ul>
-                </div>
-                <div class="col-sm-3 text-white">
-                    <h5>Policy Info</h5>
-                    <ul class="text-white">
-                        <a href="index.html"><li>> Payments</li></a>
-                        <a href="#"><li>> Cancellation & Return</li></a>
-                        <a href="#"><li>> Shipping & Delivery</li></a>
-                        <a href="#"><li>> Privacy & Policy</li></a>
-                        <a href="#"><li>> T & C</li></a>
-                    </ul>
-                </div>
-                <div class="col-sm-3 text-white">
-                    <h5>Connect With Us</h5>
-                    <div style="padding-left: 10px; margin:50px;">
-                        <a href="#"><i class='bx bxl-facebook-circle icon' style="background-color: #3b5998;border: 2px solid black;border-radius: 50%;color: white;padding: 5px;text-decoration: none; color: inherit;" undefined ></i></a>
-                        <a href="#"><i class='bx bxl-twitter icon' style="background-color: #00acee;border: 2px solid black;border-radius: 50%;color: white;padding: 5px;text-decoration: none; color: inherit;"></i></a>
-                        <a href="#"><i class='bx bxl-google icon' style="background-color:  #c71610	;border: 2px solid black;border-radius: 50%;color: white;padding: 5px;text-decoration: none; color: inherit;" ></i></a>
-                        <a href="#"><i class='bx bxl-instagram icon' style="background: linear-gradient(to top, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);border: 2px solid black;border-radius: 50%;color: white;padding: 5px;text-decoration: none; color: inherit;" ></i></a>
-                    </div>
-                </div>
-            </div> 
-            </div>       
-        </nav>
-        </section>   
-
-        <script src="js/manageProduct.js"></script>
+            </div>
+        </div> 
+      </div>       
+    </nav>
+    </section>  
         <script src="js/Product.js"></script>
+        <script src="js/manageProduct.js"></script>
 </body>
 </html>
