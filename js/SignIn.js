@@ -173,22 +173,14 @@ function check(event){
         request.onsuccess = function(event){    
          console.log('Success');
             //chuyển trang hoặc thông báo thêm thành công
-            Swal.fire({
-                icon: 'success ',
-                title: 'Đăng ký thành công',
-                
-              })
+            window.location.href = "manager.html";
+
         };
         request.onerror = function(event){
             console.log('Error');
 
         }
-        } else {
-            swal.fire({
-                icon: "error",
-                title:"Vui lòng nhập đủ thông tin cần thiết"
-            })
-        }
+        } 
 
     };
     
@@ -198,22 +190,29 @@ function ShowPassword(){
     var ShowPass1 = document.getElementById('password');
     var checkbox1 = document.getElementById('checkbox1');
     
-    if (checkbox1.checked === true) {
-        ShowPass1.type = 'text';
-    } else {
-        ShowPass1.type = 'password';
-    }
-    }
+    
+    checkbox1.checked = !checkbox1.checked;
+
+  if (checkbox1.checked) {
+    password.type = "text";
+  } else {
+    password.type = "password";
+  }
+}
+
+
     function ShowConfirmPassword(){
     var ShowPass2 = document.getElementById('confirmPassword');
     var checkbox2 = document.getElementById('checkbox2');
-    
-    if (checkbox2.checked === true) {
-        ShowPass2.type = 'text';
-    } else {
-        ShowPass2.type = 'password';
-    }
-    };
+
+    checkbox2.checked = !checkbox2.checked;
+
+  if (checkbox2.checked) {
+    ShowPass2.type = "text";
+  } else {
+    ShowPass2.type = "password";
+  }
+}
 
 
     

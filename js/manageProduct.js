@@ -54,7 +54,7 @@ if (cursor) {
         <td>${result.number}</td>
         <td>${result.describe}</td>
         <td>${result.image}</td>
-        <td><button class="edit" onclick="editBtn(${key})">Sửa</button></td>
+        <td><button class="edit" onclick="editBtn(${key})" id="editProduct">Sửa</button></td>
         <td><button onclick="deleteBtn(`+key+`)" style="cursor: pointer" class="delete">Xóa</button></td>
       </tr>`;
     tbody.insertAdjacentHTML('beforeend', tr);
@@ -131,42 +131,136 @@ deleteAll.addEventListener("click",function(){
 })
 
 /*----------------------Nút sửa thông tin --------------------*/
-function editBtn(key) {
-    var transaction = db.transaction(["Product"], "readwrite");
-    var objectStore = transaction.objectStore("Product");
 
-    var request3 = objectStore.get(key);
+
+$(function() {
+    // Khởi tạo dialog
+    $('#editProduct').dialog({
+      autoOpen: false,
+      modal: true,
+      buttons: {
+        "Lưu": function() {
+          // Lấy thông tin từ các trường nhập liệu
+          var productName = $('#productName').val();
+          var productPrice = $('#productPrice').val();
+          var productProducer = $('#productProducer').val();
+          var productNumber = $('#productNumber').val();
+          var productDescribe = $('#productDescribe').val();
+  
+          // Lưu thông tin vào IndexedDB
+          saveToIndexedDB(productName, productPrice, productProducer, productNumber, productDescribe);
+  
+          // Đóng dialog
+          $(this).dialog("close");
+        },
+        "Đóng": function() {
+          // Đóng dialog
+          $(this).dialog("close");
+        }
+      }
+    });
     
-
-    var newProduct = prompt("Nhập tên sản phầm:");
-    var newPrice = prompt("Nhập giá:");
-    var newProducer = prompt("Nhập nhà sản xuất:");
-    var newNumber = prompt("Nhập Số Lượng:");
-    var newDescribe = prompt("Nhập chi tiết sản pẩm:");
-    
-
-
-    request3.onsuccess = function(event) {
-        var data = event.target.result;
-        data.nameProduct = newProduct;
-        data.priceProduct = newPrice;
-        data.producerProduct = newProducer;
-        data.numberProduct = newNumber;
-        data.describeProduct =  newDescribe;
-
-        var update = objectStore.put(data, key);
-        update.onsuccess = function(event) {
-            console.log("Dữ liệu đã được cập nhật thành công");
-        };
-        update.onerror = function(event) {
-            console.log("Lỗi khi cập nhật dữ liệu");
-        };
-    };
-
+    // Gắn sự kiện khi click vào button "Sửa"
+    $('#editButton').on('click', function() {
+      // Hiển thị dialog
+      $('#editProduct').dialog('open');
+    });
+  });
+  
+  // Hàm lưu thông tin vào IndexedDB
+  function saveToIndexedDB(name, price, producer, number, describe) {
+    var request3 = window.indexedDB.open("Product-Management", 1);
+  
     request3.onerror = function(event) {
-        console.log("Lỗi khi tìm kiếm bản ghi");
+      console.log("Lỗi khi mở IndexedDB");
     };
+  
+    request3.onsuccess = function(event) {
+      var db = event.target.result;
+  
+      // Tạo transaction để thực hiện thao tác ghi
+      var transaction = db.transaction(["Product"], "readwrite");
+  
+      // Lấy object store để thao tác với dữ liệu
+      var objectStore = transaction.objectStore("Product");
+  
+      // Tạo một đối tượng để lưu trữ thông tin sản phẩm
+      var product = {
+        name: name,
+        price: price,
+        producer: producer,
+        number: number,
+        describe: describe
+      };
+  
+      // Thêm đối tượng vào object store
+      var request3 = objectStore.add(product);
+  
+      request3.onsuccess = function(event) {
+        console.log("Thông tin sản phẩm đã được lưu vào IndexedDB");
+      };
+  
+      request3.onerror = function(event) {
+        console.log("Lỗi khi lưu thông tin vào IndexedDB");
+      };
+    };
+  }
+
+/*-------------Tìm kiếm---------------------*/
+  
+function searchByName(){
+
+    var name = document.getElementById("search").value;
+    console.log(name)
+
+    //sử dụng getAll()
+  var request = db.transaction(["Product"]).objectStore("Product").getAll();
+    //let info =[]
+    request.onerror = function(event){
+        console.log('Error')
+    };
+
+
+  const transaction = db.transaction(["Product"], "readonly");
+  const objectStore = transaction.objectStore("Product");
+
+  const request5 = objectStore.openCursor();
+
+  request5.onsuccess = (event) => {
+    const cursor = event.target.result;
+
+    if(cursor){
+      const key = cursor.key; //access the key
+      const result2 = cursor.value; //access the value
+      
+
+      //const lowerCaseName = result.name.toLowerCase(); //chuyển viết Hoa của chuỗi thành viết thường
+
+       //định dạng lại ngày tháng năm và giờ trong bảng
+    
+
+    
+      //indexOf = 0 là có ; -1 là k có
+      if(result2.name.indexOf(name) > -1){ 
+        
+    var tbody = document.querySelector("#table tbody");
+    tbody.innerHTML = '';
+    var tr = `<tr>
+    <td><input type="checkbox" ></td>
+    <td>${result2.name}</td>
+    <td>${result2.price}</td>
+    <td>${result2.producer}</td>
+    <td>${result2.number}</td>
+    <td>${result2.describe}</td>
+    <td>${result2.image}</td>
+    <td><button class="edit" onclick="editBtn(${key}) id="editProduct">Sửa</button></td>
+    <td><button onclick="deleteBtn(`+key+`)" style="cursor: pointer" class="delete">Xóa</button></td>
+      </tr>`;
+    tbody.insertAdjacentHTML('beforeend', tr);
+      }
+
+      cursor.continue();
+      
+    }
+  }
 }
-
-
-

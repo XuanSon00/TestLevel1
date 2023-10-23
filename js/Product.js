@@ -405,93 +405,6 @@ function renderProduct(){
     document.getElementById('product-items').innerHTML = data
 }
 
-/*-------Hiển thị chi tiết sản phẩm------------*/
-/*
-function redirectToDetail(productId) {
-    localStorage.setItem('productId', productId);
-    window.location.href = 'detail.html';
-
-}
-
-var productId = localStorage.getItem('productId');
-var product = products.find(value => value.id === parseInt(productId));  //đổi giá trị của biến productId từ kiểu dữ liệu chuỗi (string) sang kiểu dữ liệu số nguyên 
-
-if (product) {
-    document.getElementById('product-items').innerHTML = `
-        <div class="product-item" style ="cursor: pointer" >
-        <img src="${product.img}" alt="">
-        <div class="product-item-text">
-        <h1>${product.name}</h1>
-        <p><span>${product.price}</span><sup>đ</sup></p>
-        </div>
-        <button onclick='addToCart(${product.id})' class ="btn btn-primary" >Thêm vào giỏ hàng</button>
-        </div>
-        <div class="product-detail">
-        <h1 style="text-align: center;">Thông Tin Sản Phẩm</h1>
-        <div class="producInfo">
-            <b>Screen:</b>
-            <span>${product.Screen}</span>
-        </div>
-        <div class="producInfo">
-            <b>OS:</b>
-            <span>${product.OS}</span>
-        </div>
-        <div class="producInfo">
-            <b>RearCamera:</b>
-            <span>${product.RearCamera}</span>
-        </div>
-        <div class="producInfo">
-            <b>FrontCamera:</b>
-            <span>${product.FrontCamera}</span>
-        </div>
-        <div class="producInfo"> 
-            <b>Chip:</b>
-            <span>${product.Chip}</span>
-        </div>
-        <div class="producInfo">
-            <b>RAM:</b>
-            <span>${product.RAM}</span>
-        </div>
-        <div class="producInfo">
-            <b>StorageCapacity:</b>
-            <span>${product.StorageCapacity}</span>
-        </div>
-        <div class="producInfo">
-            <b>SIM:</b>
-            <span>${product.SIM}</span>
-        </div>
-        <div class="producInfo">
-            <b>BatterPhoneCharger:</b>
-            <span>${product.BatterPhoneCharger}</span>
-        </div>
-    </div>
-    `;
-}
-
-*/
-
-/*
-function searchProducts() {
-    let valueSearch = document.getElementById("search").value.toLowerCase();
-    let filteredProducts = products.filter(value => {
-      return value.name.toLowerCase().includes(valueSearch);
-    });
-  
-    // Chuyển đổi mảng sản phẩm đã lọc thành chuỗi JSON
-    let filteredProductsJSON = JSON.stringify(filteredProducts);
-  
-    // Mã hóa chuỗi JSON sản phẩm đã lọc để sử dụng trong URL
-    let encodedFilteredProducts = encodeURIComponent(filteredProductsJSON);
-  
-    // Xây dựng URL của trang search.html với sản phẩm đã lọc mã hóa làm tham số
-    let searchURL = `search.html?products=${encodedFilteredProducts}`;
-  
-    // Chuyển hướng người dùng đến trang search.html
-    window.location.href = searchURL;
-  }
-  */
-
-
 
 /*-------Hiển thị sản phẩm Apple------------*/
 function renderProductApple(){
@@ -702,3 +615,36 @@ function cartLoadPage(){
 
 
 
+/* Tìm kiếm*/
+function redirectToSearch() {
+    var productName = document.getElementById('searchInput').value;
+    localStorage.setItem('productName', productName);
+    window.location.href = 'search.html';
+}
+
+
+
+// Lấy giá trị của biến "productName" từ localStorage
+var productName = localStorage.getItem('productName');
+
+// Tìm kiếm sản phẩm trong mảng "products" dựa trên tên sản phẩm đã lưu
+var product = products.find(function(value) {
+    return value.name.toLowerCase() === productName.toLowerCase();
+  });
+  
+
+if (product) {
+    var data = `
+      <div class="product-item" onclick="redirectToDetail(${product.id})">
+        <img src="${product.img}" alt="">
+        <div class="product-item-text">
+          <h1>${product.name}</h1>
+          <p><span>${product.price}</span><sup>đ</sup></p>
+        </div>
+        <button onclick="addToCart(${product.id})" class="btn btn-primary">Thêm vào giỏ hàng</button>
+      </div>
+    `;
+  
+    document.getElementById('product-items').innerHTML = data;
+  } 
+  

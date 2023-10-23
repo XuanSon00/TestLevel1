@@ -235,9 +235,9 @@ function editBtn(key) {
 
 
 
-/*----------------------Tìm kiếm (unfinished)--------------------*/
 
   /*-------------Tìm kiếm---------------------*/
+  
   function searchByName(){
 
     var name = document.getElementById("search").value;
@@ -262,7 +262,7 @@ function editBtn(key) {
     if(cursor){
       const key = cursor.key; //access the key
       const result2 = cursor.value; //access the value
-      const date = moment(result.date);
+      const date = moment(result2.date);
       const formatDate = date.format('DD/MM/YYYY HH:mm')
 
       //const lowerCaseName = result.name.toLowerCase(); //chuyển viết Hoa của chuỗi thành viết thường
@@ -273,7 +273,9 @@ function editBtn(key) {
     
       //indexOf = 0 là có ; -1 là k có
       if(result2.name.indexOf(name) > -1){ 
+        
     var tbody = document.querySelector("#table tbody");
+    tbody.innerHTML = '';
     var tr = `<tr>
         <td><input type="checkbox" data-key="1" ></td>
         <td >${result2.name}</td>
